@@ -19,6 +19,13 @@ const config: Config = {
       mainTitle: ["Cormorant", "serif"],
       heading: ["Cormorant SC", "serif"],
     },
+    colors: {
+      "brown-header": "#76453F",
+      "brown-footer": "#765954",
+      grey: "#D9D9D9",
+      "light-brown": "#BC6933",
+      beige: "#EAE2D7",
+    },
   },
   plugins: [],
 };
