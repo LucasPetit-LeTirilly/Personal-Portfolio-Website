@@ -6,10 +6,12 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
+import ScrollLink from "./ScrollLink";
 import Image from "next/image";
 
 type Anchor = "top" | "left" | "bottom" | "right";
-
+// some specifications must be implemented for better iOS compatibily
+// check the SwipeableDrawer API docs on Material UI website
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
@@ -17,6 +19,10 @@ export default function SwipeableTemporaryDrawer() {
     bottom: false,
     right: false,
   });
+
+  const iOS =
+    typeof navigator !== "undefined" &&
+    /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
@@ -33,6 +39,13 @@ export default function SwipeableTemporaryDrawer() {
       setState({ ...state, [anchor]: open });
     };
 
+  const linkIds = [
+    "#projets-recents",
+    "#competences",
+    "#contact",
+    process.env.NEXT_PUBLIC_WEBSITE_ENGLISH_URL,
+  ];
+
   const list = (anchor: Anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -42,10 +55,12 @@ export default function SwipeableTemporaryDrawer() {
     >
       <List>
         {["Projets Récents", "Compétences", "Contact", "In English"].map(
-          (text) => (
+          (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
-                <ListItemText primary={text} />
+                <ScrollLink href={linkIds[index]}>
+                  <ListItemText primary={text} />
+                </ScrollLink>
               </ListItemButton>
             </ListItem>
           ),
@@ -67,6 +82,8 @@ export default function SwipeableTemporaryDrawer() {
             />
           </Button>
           <SwipeableDrawer
+            disableBackdropTransition={!iOS}
+            disableDiscovery={iOS}
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
