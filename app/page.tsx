@@ -1,6 +1,8 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 
+// mettre la navbar en sticky
+// verifier que le scroll du drawer sur les liens est bon
 export default function Home() {
   return (
     <React.Fragment>
