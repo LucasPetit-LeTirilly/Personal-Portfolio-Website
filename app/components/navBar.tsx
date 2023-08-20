@@ -24,7 +24,7 @@ const theme = createTheme({
 export default function NavBar() {
   return (
     <ThemeProvider theme={theme}>
-      <header className="bg-brown-header flex flex-row justify-between items-center pl-5 pr-5 pt-2 pb-2">
+      <header className="bg-brown-header sticky top-0 flex flex-row justify-between items-center pl-5 pr-5 pt-2 pb-2 z-50">
         <div className="flex flex-row w-[67.4%] justify-between items-center sm:w-fit">
           <Link href={process.env.NEXT_PUBLIC_WEBSITE_URL}>
             <Image
@@ -35,7 +35,7 @@ export default function NavBar() {
               className=""
             />
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL} className="min-[720px]:ml-[5.31rem] min-[640px]:ml-[1.5rem]">
+          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL} rel="noopener noreferrer" target="_blank" className="min-[720px]:ml-[5.31rem] min-[640px]:ml-[1.5rem]">
             <Image
               src="logo-github.svg"
               alt="Lien vers la page github de Lucas Petit - Le Tirilly"
@@ -43,7 +43,7 @@ export default function NavBar() {
               height={40}
             />
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL} className="sm:ml-[1.5rem]">
+          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL} rel="noopener noreferrer" target="_blank" className="sm:ml-[1.5rem]">
             <Image
               src="logo-linkedin.svg"
               alt="Lien vers la page linked in de Lucas Petit - Le Tirilly"
