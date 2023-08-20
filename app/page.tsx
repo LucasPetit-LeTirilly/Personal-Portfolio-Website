@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
       <main>
         <HeroBanner />
-        <div id="projets-recents" className="mt-80">
+        <div id="projets-recents" className="bg-red-500">
           projets recents
         </div>
         <div id="competences" className="mt-80">
