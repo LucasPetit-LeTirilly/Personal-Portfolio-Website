@@ -58,7 +58,7 @@ export default function NavBar() {
           <div className="hidden sm:flex flex-row items-center gap-10 max-[780px]:gap-5">
             <ScrollLink href="#projets-recents">
               <p className="text-white font-koho font-medium text-lg">
-                Projets-Récents
+                Projets Récents
               </p>
             </ScrollLink>
             <ScrollLink href="#competences">

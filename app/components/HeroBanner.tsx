@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import BannerImageMobile from "../../public/hero-banner-mobile-final4k.png";
 import BannerImageDesktop from "../../public/hero-banner-final4k.png";
+import LogoArrowDown from "../../public/circle-arrow-line.svg";
 import { useWindowSize } from "../lib/customHooks";
 
 export default function HeroBanner() {
@@ -11,7 +12,7 @@ export default function HeroBanner() {
 
   return (
     <section className="relative h-[92vh] sm:h-[93.3vh]">
-      {(windowSize.width ?? 0) < 1024 ? (
+      {(windowSize.width ?? 0) < 1440 ? (
         <React.Fragment>
           <Image
             className="object-cover w-full h-full min-[790px]:object-top"
@@ -20,7 +21,7 @@ export default function HeroBanner() {
           />
           <div
             className="absolute top-[10%] left-[50%] -translate-x-[50%] z-10 font-mainTitle font-bold text-[2.5rem] whitespace-nowrap
-          max-[420px]:text-[9.4vw] min-[790px]:text-[3rem] min-[880px]:text-[4rem]"
+          max-[420px]:text-[9.4vw] min-[790px]:text-[3rem] min-[880px]:text-[4rem] min-[1200px]:text-[4.5rem] min-[1200px]:top-[15%]"
           >
             <p>Lucas Petit - Le Tirilly</p>
             <div className="w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
@@ -35,13 +36,18 @@ export default function HeroBanner() {
             alt="Dessin d'un soleil noir rayonnant"
           />
           <div
-            className="absolute top-[50.15%] left-[15%] -translate-y-[50%] z-10 font-mainTitle font-bold text-[4rem] whitespace-nowrap
-          max-[420px]:text-[9.4vw]"
+            className="absolute top-[50.15%]  -translate-y-[50%] z-10 font-mainTitle font-bold text-[4rem] whitespace-nowrap
+            min-[1440px]:left-[13%] min-[1540px]:left-[15%]"
           >
             <p>Lucas Petit - Le Tirilly</p>
             <div className="w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
             <p>Développeur Fullstack</p>
           </div>
+          <Image
+            className="absolute top-[92%] left-[50%] -translate-x-[50%]"
+            src={LogoArrowDown}
+            alt="Fleche indiquant de scroller vers le bas"
+          />
         </React.Fragment>
       )}
     </section>
