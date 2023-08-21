@@ -23,9 +23,8 @@ export default function HeroBanner() {
             className="absolute top-[10%] left-[50%] -translate-x-[50%] z-10 font-mainTitle font-bold text-[2.5rem] whitespace-nowrap
           max-[420px]:text-[9.4vw] min-[790px]:text-[3rem] min-[880px]:text-[4rem] min-[1200px]:text-[4.5rem] min-[1200px]:top-[15%]"
           >
-            <p>Lucas Petit - Le Tirilly</p>
+            <h1>Lucas Petit - Le Tirilly <br/>Développeur Fullstack</h1>
             <div className="w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
-            <p>Développeur Fullstack</p>
           </div>
         </React.Fragment>
       ) : (
@@ -39,9 +38,8 @@ export default function HeroBanner() {
             className="absolute top-[50.15%]  -translate-y-[50%] z-10 font-mainTitle font-bold text-[4rem] whitespace-nowrap
             min-[1440px]:left-[13%] min-[1540px]:left-[15%]"
           >
-            <p>Lucas Petit - Le Tirilly</p>
+            <h1>Lucas Petit - Le Tirilly <br/>Développeur Fullstack</h1>
             <div className="w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
-            <p>Développeur Fullstack</p>
           </div>
           <Image
             className="absolute top-[92%] left-[50%] -translate-x-[50%]"
