@@ -5,9 +5,9 @@ import Image from "next/image";
 import BlackEllipseMobile from "../../public/black-ellipse-mobile-projets-recents.svg";
 import BlackEllipseDesktop from "../../public/black-ellipse-desktop-projets-recents.svg";
 import RectangleGris from "../../public/rectangle-gris.png";
+import ModalProjets from "./ModalProjets";
+import { descriptionsProjets } from "../descriptionsProjets";
 import { useWindowSize } from "../lib/customHooks";
-
-// Le titre Projets Recents n'apparait pas bien de 620 à 790px
 
 export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
@@ -29,17 +29,17 @@ export default function ProjetsRecents() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <div className="relative mb-[7rem]">
+          <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:top-[104%]">
             <Image
               className="relative max-[790px]:hidden top-[0] left-[49.7%] -translate-x-[50%] w-[34%]"
               src={BlackEllipseDesktop}
               alt="Demi-cercle noir"
             />
             <h2
-              className="absolute top-[15px] left-[50%] -translate-x-[50%] whitespace-nowrap 
-              font-heading font-bold max-[790px]:text-black 
-              max-[790px]:mt-[1rem]  text-[3rem] min-[790px]:text-[3.8vw] min-[1260px]:text-[3rem]
-              min-[790px]:top-[20px] min-[1350px]:top-[30px] min-[1350px]:top-[40px]
+              className="absolute left-[50%] -translate-x-[50%] whitespace-nowrap 
+              font-heading font-bold min-[620px]:mt-[1rem] max-[790px]:text-black 
+              text-[3rem] min-[790px]:text-[3.8vw] min-[1260px]:text-[3rem]
+              min-[790px]:top-[5px] min-[1440px]:top-[30px]
               text-white w-fit"
             >
               Projets Récents
@@ -47,12 +47,12 @@ export default function ProjetsRecents() {
           </div>
         </React.Fragment>
       )}
-      <div className="relative mt-[2rem] min-[790px]:mt-[5rem]">
-      <Image
-            className="mx-auto w-[83%]"
-            src={RectangleGris}
-            alt="Demi-cercle noir"
-          />
+      <div className=" mt-[2rem] max-[620px]:mt-[1rem] max-[790px]:mt-[9rem] min-[790px]:mt-[5rem]">
+        <ModalProjets
+          data={descriptionsProjets[0]}
+        />
+        <ModalProjets title={descriptionsProjets[1].title} />
+        <ModalProjets title={descriptionsProjets[2].title} />
       </div>
     </section>
   );

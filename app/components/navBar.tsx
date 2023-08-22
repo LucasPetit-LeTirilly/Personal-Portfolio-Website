@@ -1,5 +1,8 @@
 "use client";
 import Image from "next/image";
+import LogoHome from "../../public/logo-home.svg";
+import LogoGithub from "../../public/logo-github.svg";
+import LogoLinkedIn from "../../public/logo-linkedin.svg";
 import Link from "next/link";
 import ScrollLink from "./ScrollLink";
 import SwipeableTemporaryDrawer from "./SwipeableTemporaryDrawer";
@@ -28,27 +31,33 @@ export default function NavBar() {
         <div className="flex flex-row w-[67.4%] justify-between items-center sm:w-fit">
           <Link href={process.env.NEXT_PUBLIC_WEBSITE_URL}>
             <Image
-              src="logo-home.svg"
+              src={LogoHome}
               alt="Retour à l'accueil"
-              width={40}
-              height={40}
-              className=""
+              className="w-[40px] h-[40px]"
             />
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_GITHUB_URL} rel="noopener noreferrer" target="_blank" className="min-[720px]:ml-[5.31rem] min-[640px]:ml-[1.5rem]">
+          <Link
+            href={process.env.NEXT_PUBLIC_GITHUB_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="min-[720px]:ml-[5.31rem] min-[640px]:ml-[1.5rem]"
+          >
             <Image
-              src="logo-github.svg"
+              src={LogoGithub}
               alt="Lien vers la page github de Lucas Petit - Le Tirilly"
-              width={40}
-              height={40}
+              className="w-[40px] h-[40px]"
             />
           </Link>
-          <Link href={process.env.NEXT_PUBLIC_LINKEDIN_URL} rel="noopener noreferrer" target="_blank" className="sm:ml-[1.5rem]">
+          <Link
+            href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+            rel="noopener noreferrer"
+            target="_blank"
+            className="sm:ml-[1.5rem]"
+          >
             <Image
-              src="logo-linkedin.svg"
+              src={LogoLinkedIn}
               alt="Lien vers la page linked in de Lucas Petit - Le Tirilly"
-              width={40}
-              height={40}
+              className="w-[40px] h-[40px]"
             />
           </Link>
         </div>
