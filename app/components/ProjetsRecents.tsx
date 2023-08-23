@@ -4,15 +4,16 @@ import React from "react";
 import Image from "next/image";
 import BlackEllipseMobile from "../../public/black-ellipse-mobile-projets-recents.svg";
 import BlackEllipseDesktop from "../../public/black-ellipse-desktop-projets-recents.svg";
-import RectangleGris from "../../public/rectangle-gris.png";
 import ModalProjets from "./ModalProjets";
 import { descriptionsProjets } from "../descriptionsProjets";
 import { useWindowSize } from "../lib/customHooks";
 
+// ajouter carousel images ?
+
 export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
   return (
-    <section>
+    <section id="projets-recents">
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
@@ -51,8 +52,8 @@ export default function ProjetsRecents() {
         <ModalProjets
           data={descriptionsProjets[0]}
         />
-        <ModalProjets title={descriptionsProjets[1].title} />
-        <ModalProjets title={descriptionsProjets[2].title} />
+        <ModalProjets data={descriptionsProjets[1]} />
+        <ModalProjets data={descriptionsProjets[2]} />
       </div>
     </section>
   );

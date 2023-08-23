@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import Image from "next/image";
 import RectangleGris from "../../public/rectangle-gris.png";
@@ -12,11 +11,13 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "90%",
+  height: "90%",
   bgcolor: "background.paper",
   borderRadius: "10px",
   boxShadow: 24,
   p: 4,
   outline: 0,
+  overflowY: "scroll"
 };
 
 interface Data {
@@ -30,14 +31,13 @@ interface Data {
 }
 
 interface Props {
-  data: Data
+  data: Data;
 }
 
 export default function BasicModal(props: any) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  console.log(props.data?.title);
 
   return (
     <article className="mx-auto w-[83%] mb-[3rem]">
@@ -51,12 +51,21 @@ export default function BasicModal(props: any) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            {props.title}
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          <Image
+            src={props.data.images[0]}
+            alt="Lien vers la page github de Lucas Petit - Le Tirilly"
+            className=""
+            width={1000}
+            height={1000}
+          />
+          <h3 id="modal-modal-title">{props.data.title}</h3>
+          <p>
+            <time>{props.data.date}</time>
+          </p>
+          <p>{props.data.lienGithub}</p>
+          <p>{props.data.competences}</p>
+          <p id="modal-modal-description">{props.data.description}</p>
+          <p>{props.data.problemes}</p>
         </Box>
       </Modal>
     </article>
