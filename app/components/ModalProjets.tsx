@@ -2,8 +2,10 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
+import Cross from "../../public/xmark-solid.svg";
 import Image from "next/image";
 import RectangleGris from "../../public/rectangle-gris.png";
+import { Carousel } from "./Carousel";
 
 const style = {
   position: "absolute" as "absolute",
@@ -17,7 +19,7 @@ const style = {
   boxShadow: 24,
   p: 4,
   outline: 0,
-  overflowY: "scroll"
+  overflowY: "scroll",
 };
 
 interface Data {
@@ -34,10 +36,11 @@ interface Props {
   data: Data;
 }
 
-export default function BasicModal(props: any) {
+export default function BasicModal(props: Props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  
 
   return (
     <article className="mx-auto w-[83%] mb-[3rem]">
@@ -51,6 +54,11 @@ export default function BasicModal(props: any) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <Button onClick={handleClose}>
+            <Image src={Cross} alt="Fermer la fenêtre" width={30} height={40} />
+          </Button>
+          <Carousel/>
+
           <Image
             src={props.data.images[0]}
             alt="Lien vers la page github de Lucas Petit - Le Tirilly"

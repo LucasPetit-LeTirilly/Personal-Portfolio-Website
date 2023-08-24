@@ -49,9 +49,7 @@ export default function ProjetsRecents() {
         </React.Fragment>
       )}
       <div className=" mt-[2rem] max-[620px]:mt-[1rem] max-[790px]:mt-[9rem] min-[790px]:mt-[5rem]">
-        <ModalProjets
-          data={descriptionsProjets[0]}
-        />
+        <ModalProjets data={descriptionsProjets[0]} />
         <ModalProjets data={descriptionsProjets[1]} />
         <ModalProjets data={descriptionsProjets[2]} />
       </div>

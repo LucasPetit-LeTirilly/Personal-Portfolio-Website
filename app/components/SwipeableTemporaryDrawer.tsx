@@ -10,8 +10,7 @@ import ScrollLink from "./ScrollLink";
 import Image from "next/image";
 
 type Anchor = "top" | "left" | "bottom" | "right";
-// some specifications must be implemented for better iOS compatibily
-// check the SwipeableDrawer API docs on Material UI website
+
 export default function SwipeableTemporaryDrawer() {
   const [state, setState] = React.useState({
     top: false,
