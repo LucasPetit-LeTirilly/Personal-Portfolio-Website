@@ -1,7 +1,7 @@
 export const descriptionsProjets = [
   {
     title: "Projet 1",
-    images: ["/rectangle-gris.png"],
+    images: ["/rectangle-gris.png", "/circle-arrow-line.svg"],
     date: "4215",
     lienGithub: "uuu",
     description:

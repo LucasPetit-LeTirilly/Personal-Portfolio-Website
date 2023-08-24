@@ -57,15 +57,7 @@ export default function BasicModal(props: Props) {
           <Button onClick={handleClose}>
             <Image src={Cross} alt="Fermer la fenêtre" width={30} height={40} />
           </Button>
-          <Carousel/>
-
-          <Image
-            src={props.data.images[0]}
-            alt="Lien vers la page github de Lucas Petit - Le Tirilly"
-            className=""
-            width={1000}
-            height={1000}
-          />
+          <Carousel images={props.data.images}/>
           <h3 id="modal-modal-title">{props.data.title}</h3>
           <p>
             <time>{props.data.date}</time>

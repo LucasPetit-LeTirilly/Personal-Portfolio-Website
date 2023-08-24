@@ -1,8 +1,13 @@
 import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import CarouselModal from "./CarouselModal";
 
-export const Carousel = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel();
+interface Props {
+  images: string[];
+}
+
+export function Carousel(props: Props) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -12,12 +17,17 @@ export const Carousel = () => {
   }, [emblaApi]);
 
   return (
-    <div className="embla overflow-hidden h-[300px]">
+    <div className="embla overflow-hidden">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex">
-          <div className="embla__slide flex-[0_0_100%] min-w-0">Slide 1</div>
-          <div className="embla__slide flex-[0_0_100%] min-w-0">Slide 2</div>
-          <div className="embla__slide flex-[0_0_100%] min-w-0">Slide 3</div>
+          {props.images.map((image, index) => (
+            <div
+              key={image + index}
+              className="embla__slide flex-[0_0_100%] min-w-0"
+            >
+              <CarouselModal image={image} index={index} />
+            </div>
+          ))}
         </div>
       </div>
       <button className="embla__prev" onClick={scrollPrev}>
@@ -28,4 +38,4 @@ export const Carousel = () => {
       </button>
     </div>
   );
-};
+}
