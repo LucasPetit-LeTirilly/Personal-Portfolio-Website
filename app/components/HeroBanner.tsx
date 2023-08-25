@@ -6,6 +6,7 @@ import BannerImageMobile from "../../public/hero-banner-mobile-final4k.png";
 import BannerImageDesktop from "../../public/hero-banner-final4k.png";
 import LogoArrowDown from "../../public/circle-arrow-line.svg";
 import { useWindowSize } from "../lib/customHooks";
+import ScrollLink from "./ScrollLink";
 
 export default function HeroBanner() {
   const { windowSize } = useWindowSize();
@@ -53,11 +54,14 @@ export default function HeroBanner() {
               <div className="absolute top-[50%] w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
             </div>
           </div>
+          <ScrollLink href="#projets-recents">
           <Image
             className="absolute top-[92%] left-[50%] -translate-x-[50%]"
             src={LogoArrowDown}
             alt="Fleche indiquant de scroller vers le bas"
+          
           />
+          </ScrollLink>
         </React.Fragment>
       )}
     </section>

@@ -3,7 +3,7 @@ export const descriptionsProjets = [
     title: "Projet 1",
     images: ["/rectangle-gris.png", "/circle-arrow-line.svg"],
     date: "4215",
-    lienGithub: "uuu",
+    lienGithub: "https://github.com/LucasPetit-LeTirilly/Projet-React-OpenClassrooms",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     competences:

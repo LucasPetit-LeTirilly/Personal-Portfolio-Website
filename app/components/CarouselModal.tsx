@@ -10,11 +10,15 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "90%",
+  height: "90%",
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  borderRadius: "10px",
   boxShadow: 24,
-  p: 4,
+  pl: "50px",
+  pr: "40px",
+  pt: 0,
+  pb: 8,
 };
 
 interface Props {
@@ -27,13 +31,12 @@ export default function CarouselModal(props: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div>
-      <Button onClick={handleOpen}>
+    <div className="h-[35vh] lg:h-[45vh]">
+      <Button onClick={handleOpen} className="w-full h-full">
         <Image
           src={props.image}
           alt={`Capture d'écran numéro ${props.index} du site `}
-          width={100}
-          height={100}
+          fill={true}
         />
       </Button>
       <Modal
@@ -43,7 +46,10 @@ export default function CarouselModal(props: Props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Button onClick={handleClose}>
+          <Button
+            onClick={handleClose}
+            className="w-full flex justify-end z-10"
+          >
             <Image
               src={Cross}
               alt={"Fermeture de la fenêtre de zoom sur l'image"}
@@ -51,12 +57,13 @@ export default function CarouselModal(props: Props) {
               height={40}
             />
           </Button>
-          <Image
-            src={props.image}
-            alt={`Capture d'écran numéro ${props.index} du site `}
-            width={500}
-            height={500}
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={props.image}
+              alt={`Capture d'écran numéro ${props.index} du site `}
+              fill={true}
+            />
+          </div>
         </Box>
       </Modal>
     </div>
