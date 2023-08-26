@@ -8,12 +8,11 @@ import ModalProjets from "./ModalProjets";
 import { descriptionsProjets } from "../descriptionsProjets";
 import { useWindowSize } from "../lib/customHooks";
 
-// ajouter carousel images ?
 
 export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
   return (
-    <section id="projets-recents">
+    <section id="projets-recents" className="relative">
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
@@ -30,7 +29,7 @@ export default function ProjetsRecents() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:top-[104%]">
+          <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:bottom-[104%] lg:mb-5 z-10">
             <Image
               className="relative max-[790px]:hidden top-[0] left-[49.7%] -translate-x-[50%] w-[34%]"
               src={BlackEllipseDesktop}
@@ -48,11 +47,17 @@ export default function ProjetsRecents() {
           </div>
         </React.Fragment>
       )}
-      <div className=" mt-[2rem] max-[620px]:mt-[1rem] max-[790px]:mt-[9rem] min-[790px]:mt-[5rem]">
-        <ModalProjets data={descriptionsProjets[0]} />
-        <ModalProjets data={descriptionsProjets[1]} />
-        <ModalProjets data={descriptionsProjets[2]} />
+      <div className=" mt-[2rem] max-[620px]:mt-[1rem] max-[790px]:mt-[9rem] min-[790px]:mt-[5rem] lg:mt-3">
+        <div className="lg:flex lg:flex-wrap">
+          <ModalProjets data={descriptionsProjets[0]} />
+          <ModalProjets data={descriptionsProjets[1]} />
+          <ModalProjets data={descriptionsProjets[2]} />
+        </div>
       </div>
+      <div
+        className="w-[600px] h-[600px] border-[7px] border-black absolute top-[20%] left-[50%] -translate-x-[50%] rotate-45 z-0
+      max-lg:hidden"
+      ></div>
     </section>
   );
 }

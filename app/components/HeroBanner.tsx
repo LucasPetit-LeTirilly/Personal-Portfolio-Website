@@ -55,12 +55,11 @@ export default function HeroBanner() {
             </div>
           </div>
           <ScrollLink href="#projets-recents">
-          <Image
-            className="absolute top-[92%] left-[50%] -translate-x-[50%]"
-            src={LogoArrowDown}
-            alt="Fleche indiquant de scroller vers le bas"
-          
-          />
+            <Image
+              className="absolute top-[92%] left-[50%] -translate-x-[50%]"
+              src={LogoArrowDown}
+              alt="Fleche indiquant de scroller vers le bas"
+            />
           </ScrollLink>
         </React.Fragment>
       )}

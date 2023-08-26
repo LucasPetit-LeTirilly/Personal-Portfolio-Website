@@ -43,10 +43,10 @@ export default function BasicModal(props: Props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <article className="mx-auto w-[83%] mb-[3rem]">
+    <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10">
       <Button
         onClick={handleOpen}
-        className="w-[100%] h-[25vh] hover:bg-light-brown normal-case"
+        className="w-[100%] h-[25vh] lg:h-[28vh] hover:bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)]"
       >
         <p
           className="text-white font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
@@ -55,7 +55,7 @@ export default function BasicModal(props: Props) {
           {props.data.title}
         </p>
         <p className="text-white font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
-          Cliquez pour en savoir plus
+          Cliquez pour afficher les détails
         </p>
         <Image
           src={props.data.images[0]}
