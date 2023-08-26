@@ -29,7 +29,7 @@ export default function ProjetsRecents() {
         </React.Fragment>
       ) : (
         <React.Fragment>
-          <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:bottom-[104%] lg:mb-5 z-10">
+          <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:bottom-[105%] lg:mb-5 z-10">
             <Image
               className="relative max-[790px]:hidden top-[0] left-[49.7%] -translate-x-[50%] w-[34%]"
               src={BlackEllipseDesktop}
