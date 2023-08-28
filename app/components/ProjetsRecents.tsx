@@ -55,7 +55,7 @@ export default function ProjetsRecents() {
         </div>
       </div>
       <div
-        className="w-[600px] h-[600px] border-[7px] border-black absolute top-[20%] left-[50%] -translate-x-[50%] rotate-45 z-0
+        className="w-[40vw] h-[40vw] border-[7px] border-black absolute top-[20%] left-[50%] -translate-x-[50%] rotate-45 z-0
       max-lg:hidden"
       ></div>
     </section>

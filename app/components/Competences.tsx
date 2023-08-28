@@ -7,6 +7,7 @@ import FrontendCompetencesMobile from "../../public/frontend-competence-circle-m
 import BackendCompetencesMobile from "../../public/backend-competence-circle-mobile.svg";
 import OutilsCompetencesMobile from "../../public/outils-competence-circle-mobile.svg";
 import OutilsCompetencesDesktop from "../../public/outils-competence-circle-desktop.svg";
+import Margin from "../../public/margin-extra-long-edited4k.png";
 import { useWindowSize } from "../lib/customHooks";
 
 export default function Competences() {
@@ -44,53 +45,86 @@ export default function Competences() {
         </React.Fragment>
       )}
       {(windowSize.width ?? 0) < 620 ? (
-        <div className="flex flex-col gap-5 w-[70%] items-stretch ml-[15%] pb-7">
+        <div className="relative flex flex-col gap-5 w-[70%] items-stretch ml-[15%] pb-7">
           <article>
             <Image
               src={FrontendCompetencesMobile}
               alt="Compétences Frontend"
-              className="w-full"
+              className="relative w-full z-10"
             />
           </article>
           <article>
             <Image
               src={BackendCompetencesMobile}
               alt="Compétences Backend"
-              className="w-full"
+              className="relative w-full z-10"
             />
           </article>
           <article>
             <Image
               src={OutilsCompetencesMobile}
               alt="Compétences liées aux outils"
-              className="w-full"
+              className="relative w-full z-10"
             />
           </article>
+          <div
+            className="absolute top-[22.5%] left-[7%] border-b-[6px] border-l-[6px]  border-black w-[60vw] h-[60vw] rotate-45 z-0
+      drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          ></div>
+          <div
+            className="absolute top-[59%] left-[7%] border-t-[6px] border-r-[6px] border-black w-[60vw] h-[60vw] rotate-45 z-0
+              
+      drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+          ></div>
         </div>
       ) : (
-        <div className="relative w-full h-[115vw]">
-          <article>
-            <Image
-              src={FrontendCompetencesMobile}
-              alt="Compétences Frontend"
-              className="w-[35%] absolute top-[10%] left-5"
-            />
-          </article>
-          <article>
-            <Image
-              src={BackendCompetencesMobile}
-              alt="Compétences Backend"
-              className="w-[30%] absolute top-0 right-5"
-            />
-          </article>
-          <div></div>
-          <article>
-            <Image
-              src={OutilsCompetencesDesktop}
-              alt="Compétences liées aux outils"
-              className="w-[55%] absolute top-[50%] left-[50%] -translate-x-[50%]"
-            />
-          </article>
+        <div className="lg:grid lg:grid-cols-3">
+          <Image
+            src={Margin}
+            alt="Marge décorative"
+            className="max-lg:hidden w-[10vw]"
+          />
+          <div className="relative w-full h-[115vw] lg:w-[80vw]">
+            <article>
+              <Image
+                src={FrontendCompetencesMobile}
+                alt="Compétences Frontend"
+                className="w-[35%] absolute top-[8%] left-10 z-10"
+              />
+            </article>
+            <article>
+              <Image
+                src={BackendCompetencesMobile}
+                alt="Compétences Backend"
+                className="w-[30%] absolute top-5 right-10 z-10"
+              />
+            </article>
+            <div></div>
+            <article>
+              <Image
+                src={OutilsCompetencesDesktop}
+                alt="Compétences liées aux outils"
+                className="w-[55%] absolute top-[35%] left-[57%] -translate-x-[50%] z-10"
+              />
+            </article>
+            <div
+              className="absolute top-[5%] left-[50%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[78deg] z-0
+      drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            ></div>
+            <div
+              className="absolute top-[18%] left-[65%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[58deg] z-0
+      drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            ></div>
+            <div
+              className="absolute top-[20.5%] left-[27%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[115deg] z-0
+      drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            ></div>
+          </div>
+          <Image
+            src={Margin}
+            alt="Marge décorative"
+            className="max-lg:hidden w-[10vw] rotate-180"
+          />
         </div>
       )}
     </section>
