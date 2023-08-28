@@ -33,12 +33,14 @@ export default function Competences() {
           <Image
             src={BlackEllipsisDesktop}
             alt="Demi-cercle noir"
-            className="absolute top-0 left-[50%] -translate-x-[50%] w-[33%]"
+            className="absolute top-0 left-[50%] -translate-x-[50%] w-[33%] lg:w-[25%]"
           />
           <h2
             className="font-heading font-bold text-2xl text-white absolute top-9 left-[50%] -translate-x-[50%] 
-            min-[620px]:text-[3.8vw] min-[1260px]:text-[3rem]
-          min-[620px]:top-[24px] min-[790px]:top-[40px] min-[1120px]:top-[50px] min-[1260px]:top-[60px] min-[1440px]:top-[80px]"
+            min-[620px]:text-[3.8vw]
+          min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px] min-[1930px]:mt-[2vw]
+          min-[1930px]:mt-[3vw]
+          lg:text-[3vw]"
           >
             Compétences
           </h2>
@@ -78,25 +80,25 @@ export default function Competences() {
           ></div>
         </div>
       ) : (
-        <div className="lg:grid lg:grid-cols-3">
+        <div className="lg:grid lg:grid-cols-[1fr_1fr_1fr]">
           <Image
             src={Margin}
             alt="Marge décorative"
-            className="max-lg:hidden w-[10vw]"
+            className="max-lg:hidden w-[10vw] mt-[-50px]"
           />
-          <div className="relative w-full h-[115vw] lg:w-[80vw]">
+          <div className="relative w-full h-[115vw] lg:w-[80vw] mt-[-25px]">
             <article>
               <Image
                 src={FrontendCompetencesMobile}
                 alt="Compétences Frontend"
-                className="w-[35%] absolute top-[8%] left-10 z-10"
+                className="w-[25vw] lg:w-[22vw] absolute top-[8%] lg:top-[5%] left-12 z-10"
               />
             </article>
             <article>
               <Image
                 src={BackendCompetencesMobile}
                 alt="Compétences Backend"
-                className="w-[30%] absolute top-5 right-10 z-10"
+                className="w-[25vw] lg:w-[22vw] absolute top-5 right-12 z-10"
               />
             </article>
             <div></div>
@@ -104,26 +106,30 @@ export default function Competences() {
               <Image
                 src={OutilsCompetencesDesktop}
                 alt="Compétences liées aux outils"
-                className="w-[55%] absolute top-[35%] left-[57%] -translate-x-[50%] z-10"
+                className="w-[40vw] lg:w-[30vw] absolute top-[30%] lg:top-[20%] left-[55%] lg:left-[50%] -translate-x-[50%] z-10"
               />
             </article>
             <div
-              className="absolute top-[5%] left-[50%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[78deg] z-0
+              className="absolute top-[1.5%] lg:top-[-3.5%] left-[47%] border-l-[5px]  border-black w-[10vw] h-[50vw] 
+              rotate-[85deg] lg:rotate-[84deg] 
+              z-0
       drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             ></div>
             <div
-              className="absolute top-[18%] left-[65%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[58deg] z-0
+              className="absolute top-[20%] lg:top-[5.2%] left-[62%] border-l-[5px]  border-black w-[10vw] h-[35vw] rotate-[68deg]
+              lg:rotate-[52deg] z-0
       drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             ></div>
             <div
-              className="absolute top-[20.5%] left-[27%] border-l-[6px]  border-black w-[10vw] h-[50vw] rotate-[115deg] z-0
+              className="absolute top-[13.5%] left-[29%] border-l-[5px]  border-black w-[10vw] h-[52vw] lg:h-[25vw] rotate-[108deg]
+              lg:rotate-[120deg] z-0
       drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             ></div>
           </div>
           <Image
             src={Margin}
             alt="Marge décorative"
-            className="max-lg:hidden w-[10vw] rotate-180"
+            className="max-lg:hidden w-[10vw] rotate-180 mt-[-50px]"
           />
         </div>
       )}

@@ -38,8 +38,8 @@ export default function ProjetsRecents() {
             <h2
               className="absolute left-[50%] -translate-x-[50%] whitespace-nowrap 
               font-heading font-bold min-[620px]:mt-[1rem] max-[790px]:text-black 
-              text-[3rem] min-[790px]:text-[3.8vw] min-[1260px]:text-[3rem]
-              min-[790px]:top-[5px] min-[1440px]:top-[30px]
+              text-[3rem] min-[790px]:text-[3.8vw] min-[1260px]:text-[3vw]
+              min-[790px]:top-[5px] min-[1440px]:top-[30px] min-[2000px]:top-[40px]
               text-white w-fit"
             >
               Projets Récents
