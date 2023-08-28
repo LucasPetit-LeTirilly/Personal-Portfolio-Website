@@ -16,13 +16,13 @@ export default function ProjetsRecents() {
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
-            className="relative top-[0] left-[49.7%] -translate-x-[50%] w-[204px]"
+            className="relative top-[0] left-[49.7%] -translate-x-[50%] w-[200px]"
             src={BlackEllipseMobile}
             alt="Demi-cercle noir"
           />
           <h2
             className="relative bottom-[125px] left-[50%] -translate-x-[50%] font-heading font-bold text-[1.5rem] text-white
-      min-[620px]:bottom-[95px] min-[620px]:text-[1.75rem] w-fit"
+      min-[620px]:bottom-[95px] min-[620px]:text-[1.75rem] w-fit z-20"
           >
             Projets Récents
           </h2>

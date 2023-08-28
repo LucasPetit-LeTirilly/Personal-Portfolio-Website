@@ -11,8 +11,8 @@ export default function Home() {
       <NavBar />
       <main>
         <HeroBanner />
-        <ProjetsRecents/>
-        <Competences/>
+        <ProjetsRecents />
+        <Competences />
         <div id="contact" className="mt-80">
           contact
         </div>
