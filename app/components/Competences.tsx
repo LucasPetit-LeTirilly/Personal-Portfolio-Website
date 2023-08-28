@@ -39,10 +39,10 @@ export default function Competences() {
             />
             <h2
               className="font-heading font-bold text-2xl text-white absolute top-9 left-[50%] -translate-x-[50%] 
-            min-[620px]:text-[3.8vw]
+            min-[620px]:text-[3.8vw] lg:text-[3vw]
           min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px] min-[1930px]:mt-[2vw]
           min-[1930px]:mt-[3vw]
-          lg:text-[3vw]"
+          "
             >
               Compétences
             </h2>
@@ -84,19 +84,19 @@ export default function Competences() {
             <Formations />
           </React.Fragment>
         ) : (
-          <div className="lg:grid lg:grid-cols-[1fr_1fr_1fr]">
+          <div className="lg:grid lg:grid-cols-[1fr_1fr_1fr] h-[190vh]">
             <Image
               src={Margin}
               alt="Marge décorative"
               className="max-lg:hidden w-[10vw] mt-[-50px]"
             />
             <div>
-              <div className="relative w-full h-[115vw] lg:w-[80vw] mt-[-25px]">
+              <div className="relative w-full h-[60vw] lg:w-[80vw] mt-[-25px] ">
                 <article>
                   <Image
                     src={FrontendCompetencesMobile}
                     alt="Compétences Frontend"
-                    className="w-[25vw] lg:w-[22vw] absolute top-[8%] lg:top-[5%] left-12 z-10"
+                    className="w-[25vw] lg:w-[22vw] absolute top-[20%] lg:top-[5%] left-12 z-10"
                   />
                 </article>
                 <article>
@@ -111,22 +111,24 @@ export default function Competences() {
                   <Image
                     src={OutilsCompetencesDesktop}
                     alt="Compétences liées aux outils"
-                    className="w-[40vw] lg:w-[30vw] absolute top-[30%] lg:top-[20%] left-[55%] lg:left-[50%] -translate-x-[50%] z-10"
+                    className="w-[40vw] lg:w-[30vw] absolute top-[60%] lg:top-[20%] left-[52%] lg:left-[50%] -translate-x-[50%] z-10"
                   />
                 </article>
                 <div
-                  className="absolute top-[1.5%] lg:top-[-3.5%] left-[47%] border-l-[5px]  border-black w-[10vw] h-[50vw] 
-              rotate-[85deg] lg:rotate-[84deg] 
+                  className="absolute top-[2%] lg:top-[-3.5%] left-[47%] border-l-[5px]  border-black w-[10vw] h-[50vw] 
+              rotate-[79deg] lg:rotate-[84deg] 
               z-0
               drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 ></div>
                 <div
-                  className="absolute top-[20%] lg:top-[5.2%] left-[62%] border-l-[5px]  border-black w-[10vw] h-[35vw] rotate-[68deg]
+                  className="absolute top-[13%] lg:top-[5.2%] left-[62%] border-l-[5px]  border-black w-[10vw] h-[45vw] 
+                  rotate-[42deg]
               lg:rotate-[52deg] z-0 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 ></div>
                 <div
-                  className="absolute top-[13.5%] left-[29%] border-l-[5px]  border-black w-[10vw] h-[52vw] lg:h-[25vw] rotate-[108deg]
-              lg:rotate-[120deg] z-0 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                  className="absolute top-[16%] left-[29%] border-l-[5px]  border-black w-[10vw] h-[52vw] lg:h-[25vw] 
+                  rotate-[117deg]
+                  lg:rotate-[120deg] z-0 drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                 ></div>
               </div>
               <Formations />
