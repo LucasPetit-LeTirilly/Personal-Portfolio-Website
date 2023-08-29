@@ -17,7 +17,7 @@ export default function Competences() {
     <React.Fragment>
       <section
         id="competences"
-        className="relative bg-beige pt-[150px] min-[620px]:pt-[50px]"
+        className="relative bg-beige pt-[150px] min-[620px]:pt-[50px] lg:pt-[0px]"
       >
         {(windowSize.width ?? 0) < 620 ? (
           <React.Fragment>
@@ -84,14 +84,17 @@ export default function Competences() {
             <Formations />
           </React.Fragment>
         ) : (
-          <div className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[97vw] overflow-y-hidden">
+          <div
+            className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[105vw] min-[1300px]:grid-rows-[103vw] 
+          min-[2000px]:grid-rows-[100vw] min-[2000px]:grid-rows-[97vw] overflow-y-hidden"
+          >
             <Image
               src={Margin}
               alt="Marge décorative"
               className="max-lg:hidden w-[10vw] mt-[-50px]"
             />
             <div>
-              <div className="relative w-full h-[60vw] lg:h-[42vw] lg:w-[80vw] mt-[-25px] ">
+              <div className="relative w-full h-[60vw] lg:h-[42vw] lg:w-[80vw] mt-[-25px] lg:mt-[50px] ">
                 <article>
                   <Image
                     src={FrontendCompetencesMobile}

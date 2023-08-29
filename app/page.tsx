@@ -14,8 +14,9 @@ export default function Home() {
         <HeroBanner />
         <ProjetsRecents />
         <Competences />
-        <Contact/>
-      </main>  
+        <Contact />
+      </main>
+      <footer></footer>
     </React.Fragment>
   );
 }
