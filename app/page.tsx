@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import HeroBanner from "./components/HeroBanner";
 import ProjetsRecents from "./components/ProjetsRecents";
 import Competences from "./components/Competences";
+import Contact from "./components/Contact";
 
 // traduire les alt des images en anglais
 export default function Home() {
@@ -13,10 +14,8 @@ export default function Home() {
         <HeroBanner />
         <ProjetsRecents />
         <Competences />
-        <div id="contact" className="mt-80">
-          contact
-        </div>
-      </main>
+        <Contact/>
+      </main>  
     </React.Fragment>
   );
 }
