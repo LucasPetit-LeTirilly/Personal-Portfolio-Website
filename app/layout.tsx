@@ -1,5 +1,4 @@
 import "./globals.css";
-// importer les fonts ici ?
 
 export default function RootLayout({
   children,
@@ -7,7 +6,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="scroll-smooth">
       <body>{children}</body>
     </html>
   );

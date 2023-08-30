@@ -4,7 +4,6 @@ import LogoHome from "../../public/logo-home.svg";
 import LogoGithub from "../../public/logo-github.svg";
 import LogoLinkedIn from "../../public/logo-linkedin.svg";
 import Link from "next/link";
-import ScrollLink from "./ScrollLink";
 import SwipeableTemporaryDrawer from "./SwipeableTemporaryDrawer";
 import { createTheme, ThemeProvider } from "@mui/material";
 
@@ -28,8 +27,8 @@ export default function NavBar() {
   return (
     <ThemeProvider theme={theme}>
       <header className="bg-brown-header sticky top-0 flex flex-row justify-between items-center pl-5 pr-5 pt-2 pb-2 z-50">
-        <div className="flex flex-row w-[67.4%] justify-between items-center sm:w-fit">
-          <Link href={process.env.NEXT_PUBLIC_WEBSITE_URL}>
+        <nav className="flex flex-row w-[67.4%] justify-between items-center sm:w-fit scroll-smooth">
+          <Link href="#accueil">
             <Image
               src={LogoHome}
               alt="Retour à l'accueil"
@@ -60,26 +59,26 @@ export default function NavBar() {
               className="w-[40px] h-[40px]"
             />
           </Link>
-        </div>
+        </nav>
 
         <nav>
           <SwipeableTemporaryDrawer />
           <div className="hidden sm:flex flex-row items-center gap-10 max-[780px]:gap-5">
-            <ScrollLink href="#projets-recents">
+            <Link href="#projets-recents">
               <p className="text-white font-koho font-medium text-lg">
                 Projets Récents
               </p>
-            </ScrollLink>
-            <ScrollLink href="#competences">
+            </Link>
+            <Link href="#competences">
               <p className="text-white font-koho font-medium text-lg">
                 Compétences
               </p>
-            </ScrollLink>
-            <ScrollLink href="#contact">
+            </Link>
+            <Link href="#contact">
               <p className="text-white font-koho font-medium text-lg">
                 Contact
               </p>
-            </ScrollLink>
+            </Link>
             <Link href={process.env.NEXT_PUBLIC_WEBSITE_ENGLISH_URL}>
               <p className="text-white font-koho font-medium text-lg">
                 In English

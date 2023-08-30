@@ -8,11 +8,10 @@ import ModalProjets from "./ModalProjets";
 import { descriptionsProjets } from "../descriptionsProjets";
 import { useWindowSize } from "../lib/customHooks";
 
-
 export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
   return (
-    <section id="projets-recents" className="relative">
+    <section className="relative">
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
@@ -21,6 +20,7 @@ export default function ProjetsRecents() {
             alt="Demi-cercle noir"
           />
           <h2
+            id="projets-recents"
             className="relative bottom-[125px] left-[50%] -translate-x-[50%] font-heading font-bold text-[1.5rem] text-white
       min-[620px]:bottom-[95px] min-[620px]:text-[1.75rem] w-fit z-20"
           >
@@ -36,6 +36,7 @@ export default function ProjetsRecents() {
               alt="Demi-cercle noir"
             />
             <h2
+              id="projets-recents"
               className="absolute left-[50%] -translate-x-[50%] whitespace-nowrap 
               font-heading font-bold min-[620px]:mt-[1rem] max-[790px]:text-black 
               text-[3rem] min-[790px]:text-[3.8vw] min-[1260px]:text-[3vw]

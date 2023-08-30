@@ -19,7 +19,7 @@ export default function Contact() {
             className="relative top-0 left-[50%] -translate-x-[50%] w-[232px]"
           />
           <h2 className="font-heading text-[1.8rem] text-white absolute top-6 left-[50%] -translate-x-[50%]">
-            Compétences
+            Contact
           </h2>
         </React.Fragment>
       ) : (

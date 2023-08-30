@@ -4,6 +4,7 @@ import HeroBanner from "./components/HeroBanner";
 import ProjetsRecents from "./components/ProjetsRecents";
 import Competences from "./components/Competences";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 // traduire les alt des images en anglais
 export default function Home() {
@@ -15,8 +16,8 @@ export default function Home() {
         <ProjetsRecents />
         <Competences />
         <Contact />
+        <Footer />
       </main>
-      <footer></footer>
     </React.Fragment>
   );
 }

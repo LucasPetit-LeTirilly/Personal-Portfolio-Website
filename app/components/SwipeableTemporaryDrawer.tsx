@@ -6,8 +6,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import ScrollLink from "./ScrollLink";
 import Image from "next/image";
+import Link from "next/link";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -57,9 +57,9 @@ export default function SwipeableTemporaryDrawer() {
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
-                <ScrollLink href={linkIds[index]}>
+                <Link href={linkIds[index]}>
                   <ListItemText primary={text} />
-                </ScrollLink>
+                </Link>
               </ListItemButton>
             </ListItem>
           ),

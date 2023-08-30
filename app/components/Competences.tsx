@@ -86,7 +86,7 @@ export default function Competences() {
         ) : (
           <div
             className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[105vw] min-[1300px]:grid-rows-[103vw] 
-          min-[2000px]:grid-rows-[100vw] min-[2000px]:grid-rows-[97vw] overflow-y-hidden"
+             min-[2000px]:grid-rows-[97vw] overflow-y-hidden"
           >
             <Image
               src={Margin}

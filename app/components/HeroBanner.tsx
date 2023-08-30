@@ -12,7 +12,7 @@ export default function HeroBanner() {
   const { windowSize } = useWindowSize();
 
   return (
-    <section className="relative h-[92vh] sm:h-[93.3vh] z-10">
+    <section id="accueil" className="relative h-[92vh] sm:h-[93.3vh] z-10">
       {(windowSize.width ?? 0) < 1440 ? (
         <React.Fragment>
           <Image
