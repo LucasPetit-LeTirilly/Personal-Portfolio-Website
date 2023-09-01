@@ -61,7 +61,7 @@ export default function BasicModal(props: Props) {
           src={props.data.images[0]}
           fill={true}
           alt="Projet"
-          className="hover:opacity-0"
+          className="hover:opacity-0 object-cover object-top"
         />
       </Button>
       <Modal

@@ -37,6 +37,7 @@ export default function CarouselModal(props: Props) {
           src={props.image}
           alt={`Capture d'écran numéro ${props.index} du site `}
           fill={true}
+          className="object-cover object-top"
         />
       </Button>
       <Modal
