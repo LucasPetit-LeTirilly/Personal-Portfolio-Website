@@ -2,10 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import BlackEllipsisMobile from "../../public/black-ellipse-mobile-competences.svg";
-import BlackEllipsisDesktop from "../../public/black-ellipse-desktop-competences.svg";
-import BlackSquare from "../../public/black-square.svg";
-import { useWindowSize } from "../lib/customHooks";
+import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
+import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
+import BlackSquare from "../../../public/black-square.svg";
+import { useWindowSize } from "../../lib/customHooks";
 
 export default function Contact() {
   const { windowSize } = useWindowSize();

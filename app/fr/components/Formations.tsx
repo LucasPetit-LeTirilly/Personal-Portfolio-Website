@@ -1,11 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import BlackCircleMobile from "../../public/black-circle-mobile-formations.svg";
-import BlackCircleDesktop from "../../public/black-circle-desktop-formations.svg";
-import ArrowFormationMobile from "../../public/arrow-formations-mobile.svg";
-import ArrowFormationDesktop from "../../public/arrow-formations-desktop.svg";
-import ArrowFormationDesktopWithText from "../../public/arrow-formations-desktop-with-text.svg";
-import { useWindowSize } from "../lib/customHooks";
+import BlackCircleMobile from "../../../public/black-circle-mobile-formations.svg";
+import ArrowFormationMobile from "../../../public/arrow-formations-mobile.svg";
+import ArrowFormationDesktop from "../../../public/arrow-formations-desktop.svg";
+import ArrowFormationDesktopWithText from "../../../public/arrow-formations-desktop-with-text.svg";
+import { useWindowSize } from "../../lib/customHooks";
 
 export default function Formations() {
   const { windowSize } = useWindowSize();

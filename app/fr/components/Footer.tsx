@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import LogoGithub from "../../public/logo-github.svg";
-import LogoLinkedin from "../../public/logo-linkedin.svg";
-import LogoFooter from "../../public/logo-footer.svg";
+import LogoGithub from "../../../public/logo-github.svg";
+import LogoLinkedin from "../../../public/logo-linkedin.svg";
+import LogoFooter from "../../../public/logo-footer.svg";
 
 export default function Footer() {
   return (

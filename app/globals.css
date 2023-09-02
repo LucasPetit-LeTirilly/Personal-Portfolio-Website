@@ -8,5 +8,5 @@
 html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
-  scroll-padding-top: 5%;
+  scroll-padding-top: 7%;
 }

@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
-import Cross from "../../public/xmark-solid.svg";
+import Cross from "../../../public/xmark-solid.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from "./Carousel";
@@ -15,7 +15,6 @@ const style = {
   width: "90%",
   height: "90%",
   bgcolor: "background.paper",
-  borderRadius: "10px",
   boxShadow: 24,
   p: 3,
   pt: 2,
@@ -43,10 +42,10 @@ export default function BasicModal(props: Props) {
   const handleClose = () => setOpen(false);
 
   return (
-    <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10">
+    <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
       <Button
         onClick={handleOpen}
-        className="w-[100%] h-[25vh] lg:h-[28vh] hover:bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)]"
+        className="w-[100%] h-[25vh] lg:h-[28vh] hover:bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
       >
         <p
           className="text-white font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
@@ -103,7 +102,7 @@ export default function BasicModal(props: Props) {
             </div>
           </div>
           <div className="lg:flex gap-5">
-            <div>
+            <div className="flex-[1_1_0]">
               <p className="font-koho text-2xl font-normal mt-2">
                 Description :
               </p>
@@ -114,7 +113,7 @@ export default function BasicModal(props: Props) {
                 {props.data.description}
               </p>
             </div>
-            <div>
+            <div className="flex-[1_1_0]">
               <p className="font-koho text-2xl font-normal mt-2">
                 Problématiques et solutions :
               </p>

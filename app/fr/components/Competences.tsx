@@ -1,15 +1,15 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import BlackEllipsisMobile from "../../public/black-ellipse-mobile-competences.svg";
-import BlackEllipsisDesktop from "../../public/black-ellipse-desktop-competences.svg";
-import FrontendCompetencesMobile from "../../public/frontend-competence-circle-mobile.svg";
-import BackendCompetencesMobile from "../../public/backend-competence-circle-mobile.svg";
-import OutilsCompetencesMobile from "../../public/outils-competence-circle-mobile.svg";
-import OutilsCompetencesDesktop from "../../public/outils-competence-circle-desktop.svg";
-import Margin from "../../public/margin-extra-long-edited4k.png";
+import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
+import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
+import FrontendCompetencesMobile from "../../../public/frontend-competence-circle-mobile.svg";
+import BackendCompetencesMobile from "../../../public/backend-competence-circle-mobile.svg";
+import OutilsCompetencesMobile from "../../../public/outils-competence-circle-mobile.svg";
+import OutilsCompetencesDesktop from "../../../public/outils-competence-circle-desktop.svg";
+import Margin from "../../../public/margin-extra-long-edited4k.png";
 import Formations from "./Formations";
-import { useWindowSize } from "../lib/customHooks";
+import { useWindowSize } from "../../lib/customHooks";
 
 export default function Competences() {
   const { windowSize } = useWindowSize();

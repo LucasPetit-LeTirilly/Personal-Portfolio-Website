@@ -2,11 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import BannerImageMobile from "../../public/hero-banner-mobile-final4k.png";
-import BannerImageDesktop from "../../public/hero-banner-final4k.png";
-import LogoArrowDown from "../../public/circle-arrow-line.svg";
+import BannerImageMobile from "../../../public/hero-banner-mobile-final4k.png";
+import BannerImageDesktop from "../../../public/hero-banner-final4k.png";
+import LogoArrowDown from "../../../public/circle-arrow-line.svg";
 import Link from "next/link";
-import { useWindowSize } from "../lib/customHooks";
+import { useWindowSize } from "../../lib/customHooks";
 
 export default function HeroBanner() {
   const { windowSize } = useWindowSize();

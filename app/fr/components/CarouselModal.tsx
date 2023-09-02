@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Image from "next/image";
-import Cross from "../../public/xmark-solid.svg";
+import Cross from "../../../public/xmark-solid.svg";
 
 const style = {
   position: "absolute" as "absolute",

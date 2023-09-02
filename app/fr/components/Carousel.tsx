@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import CarouselModal from "./CarouselModal";
 import Image from "next/image";
-import LeftArrow from "../../public/arrow-left.svg";
-import RightArrow from "../../public/arrow-right.svg";
+import LeftArrow from "../../../public/arrow-left.svg";
+import RightArrow from "../../../public/arrow-right.svg";
 
 interface Props {
   images: string[];

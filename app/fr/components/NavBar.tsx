@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import LogoHome from "../../public/logo-home.svg";
-import LogoGithub from "../../public/logo-github.svg";
-import LogoLinkedIn from "../../public/logo-linkedin.svg";
+import LogoHome from "../../../public/logo-home.svg";
+import LogoGithub from "../../../public/logo-github.svg";
+import LogoLinkedIn from "../../../public/logo-linkedin.svg";
 import Link from "next/link";
 import SwipeableTemporaryDrawer from "./SwipeableTemporaryDrawer";
 import { createTheme, ThemeProvider } from "@mui/material";
