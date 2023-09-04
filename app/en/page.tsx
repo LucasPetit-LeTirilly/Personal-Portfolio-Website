@@ -1,13 +1,22 @@
-// penser a changer le layout notamment pour que le tag soit <html lang=eng> et non pas lang=fr qui est par defaut sur le site
-// faire une version de la nav bar en anglais et que quand on clique sur les liens on arrive bien sur les liens de la versions anglaise
-// (par exemple button home doit ramener sur le site en anglais)
-import NavBar from "../fr/components/NavBar";
+import React from "react";
+import NavBar from "./components/NavBar";
+import HeroBanner from "./components/HeroBanner";
+import ProjetsRecents from "./components/ProjetsRecents";
+import Competences from "./components/Competences";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
-    <div>
-      <NavBar></NavBar>
-      <div>version du site en anglais</div>
-    </div>
+    <React.Fragment>
+      <NavBar />
+      <main>
+        <HeroBanner />
+        <ProjetsRecents />
+        <Competences />
+        <Contact />
+        <Footer />
+      </main>
+    </React.Fragment>
   );
 }

@@ -28,10 +28,10 @@ export default function NavBar() {
     <ThemeProvider theme={theme}>
       <header className="bg-brown-header sticky top-0 flex flex-row justify-between items-center pl-5 pr-5 pt-2 pb-2 z-50">
         <nav className="flex flex-row w-[67.4%] justify-between items-center sm:w-fit scroll-smooth">
-          <Link href="#accueil">
+          <Link href="#home">
             <Image
               src={LogoHome}
-              alt="Retour à l'accueil"
+              alt="Back to Home"
               className="w-[40px] h-[40px]"
             />
           </Link>
@@ -43,7 +43,7 @@ export default function NavBar() {
           >
             <Image
               src={LogoGithub}
-              alt="Lien vers ma page github"
+              alt="To my GitHub page"
               className="w-[40px] h-[40px]"
             />
           </Link>
@@ -55,7 +55,7 @@ export default function NavBar() {
           >
             <Image
               src={LogoLinkedIn}
-              alt="Lien vers ma page linkedIn"
+              alt="To my LinkedIn page"
               className="w-[40px] h-[40px]"
             />
           </Link>
@@ -64,24 +64,22 @@ export default function NavBar() {
         <nav>
           <SwipeableTemporaryDrawer />
           <div className="hidden sm:flex flex-row items-center gap-10 max-[780px]:gap-5">
-            <Link href="#projets-recents">
+            <Link href="#recent-projects">
               <p className="text-white font-koho font-medium text-lg">
-                Projets Récents
+                Recent Projects
               </p>
             </Link>
-            <Link href="#competences">
-              <p className="text-white font-koho font-medium text-lg">
-                Compétences
-              </p>
+            <Link href="#skills">
+              <p className="text-white font-koho font-medium text-lg">Skills</p>
             </Link>
             <Link href="#contact">
               <p className="text-white font-koho font-medium text-lg">
                 Contact
               </p>
             </Link>
-            <Link href={process.env.NEXT_PUBLIC_WEBSITE_ENGLISH_URL}>
+            <Link href={process.env.NEXT_PUBLIC_WEBSITE_FRENCH_URL}>
               <p className="text-white font-koho font-medium text-lg">
-                In English
+                In French
               </p>
             </Link>
           </div>

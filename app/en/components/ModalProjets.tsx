@@ -54,12 +54,12 @@ export default function BasicModal(props: Props) {
           {props.data.title}
         </p>
         <p className="text-white font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
-          Cliquez pour afficher les détails
+          Clic to dispay details
         </p>
         <Image
           src={props.data.images[0]}
           fill={true}
-          alt="Projet"
+          alt="Project"
           className="hover:opacity-0 object-cover object-top"
         />
       </Button>
@@ -71,7 +71,7 @@ export default function BasicModal(props: Props) {
       >
         <Box sx={style}>
           <Button onClick={handleClose} className="w-full flex justify-end">
-            <Image src={Cross} alt="Fermer la fenêtre" width={30} height={40} />
+            <Image src={Cross} alt="Close window" width={30} height={40} />
           </Button>
           <div className="lg:flex">
             <Carousel images={props.data.images} />
@@ -91,10 +91,10 @@ export default function BasicModal(props: Props) {
                 target="_blank"
                 className="underline font-bold text-light-brown"
               >
-                Lien vers le dépôt Github
+                Link to the GitHub repo
               </Link>
               <p className="mt-4 font-koho text-2xl font-normal">
-                Compétences acquises :
+                Skills acquired:
               </p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.competences}
@@ -104,7 +104,7 @@ export default function BasicModal(props: Props) {
           <div className="lg:flex gap-5">
             <div className="flex-[1_1_0]">
               <p className="font-koho text-2xl font-normal mt-2">
-                Description :
+                Description:
               </p>
               <p
                 id="modal-modal-description"
@@ -114,7 +114,7 @@ export default function BasicModal(props: Props) {
               </p>
             </div>
             <div className="flex-[1_1_0]">
-              <p className="font-koho text-2xl font-normal mt-2">Enjeux :</p>
+              <p className="font-koho text-2xl font-normal mt-2">Challenges:</p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.problemes}
               </p>

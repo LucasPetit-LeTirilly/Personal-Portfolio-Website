@@ -16,25 +16,25 @@ export default function Competences() {
   return (
     <React.Fragment>
       <section
-        id="competences"
+        id="skills"
         className="relative bg-beige pt-[150px] min-[620px]:pt-[50px] lg:pt-[0px]"
       >
         {(windowSize.width ?? 0) < 620 ? (
           <React.Fragment>
             <Image
               src={BlackEllipsisMobile}
-              alt="Demi-cercle noir"
+              alt="Black half-circle"
               className="absolute top-0 left-[50%] -translate-x-[50%] w-[232px]"
             />
             <h2 className="font-heading text-[1.8rem] text-white absolute top-6 left-[50%] -translate-x-[50%]">
-              Compétences
+              Skills
             </h2>
           </React.Fragment>
         ) : (
           <React.Fragment>
             <Image
               src={BlackEllipsisDesktop}
-              alt="Demi-cercle noir"
+              alt="Black half-circle"
               className="absolute top-0 left-[50%] -translate-x-[50%] w-[33%] lg:w-[25%]"
             />
             <h2
@@ -44,7 +44,7 @@ export default function Competences() {
           min-[1930px]:mt-[3vw]
           "
             >
-              Compétences
+              Skills
             </h2>
           </React.Fragment>
         )}
@@ -54,21 +54,21 @@ export default function Competences() {
               <article>
                 <Image
                   src={FrontendCompetencesMobile}
-                  alt="Compétences Frontend"
+                  alt="Frontend skills"
                   className="relative w-full z-10"
                 />
               </article>
               <article>
                 <Image
                   src={BackendCompetencesMobile}
-                  alt="Compétences Backend"
+                  alt="Backend skills"
                   className="relative w-full z-10"
                 />
               </article>
               <article>
                 <Image
                   src={OutilsCompetencesMobile}
-                  alt="Compétences liées aux outils"
+                  alt="Tools related skills"
                   className="relative w-full z-10"
                 />
               </article>
@@ -90,7 +90,7 @@ export default function Competences() {
           >
             <Image
               src={Margin}
-              alt="Marge décorative"
+              alt="Decorative margin"
               className="max-lg:hidden w-[10vw] mt-[-50px]"
             />
             <div>
@@ -98,14 +98,14 @@ export default function Competences() {
                 <article>
                   <Image
                     src={FrontendCompetencesMobile}
-                    alt="Compétences Frontend"
+                    alt="Frontend skills"
                     className="w-[25vw] lg:w-[22vw] absolute top-[20%] lg:top-[14%] left-12 z-10"
                   />
                 </article>
                 <article>
                   <Image
                     src={BackendCompetencesMobile}
-                    alt="Compétences Backend"
+                    alt="Backend skills"
                     className="w-[25vw] lg:w-[22vw] absolute top-5 right-12 z-10"
                   />
                 </article>
@@ -113,7 +113,7 @@ export default function Competences() {
                 <article>
                   <Image
                     src={OutilsCompetencesDesktop}
-                    alt="Compétences liées aux outils"
+                    alt="Tools related skills"
                     className="w-[40vw] lg:w-[30vw] absolute top-[60%] lg:top-[55%] left-[52%] lg:left-[50%] -translate-x-[50%] z-10"
                   />
                 </article>
@@ -135,7 +135,7 @@ export default function Competences() {
             </div>
             <Image
               src={Margin}
-              alt="Marge décorative"
+              alt="Decorative margin"
               className="max-lg:hidden w-[10vw] rotate-180 mt-[-50px]"
             />
           </div>
