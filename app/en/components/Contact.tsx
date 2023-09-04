@@ -60,7 +60,7 @@ export default function Contact() {
               type="text"
               name="surname"
               id="surname"
-              className="w-full mt-2 mb-3 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+              className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
               required
             />
           </div>
@@ -71,7 +71,7 @@ export default function Contact() {
               type="text"
               name="name"
               id="name"
-              className="w-full mt-2 mb-3 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+              className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
               required
             />
           </div>
@@ -82,7 +82,7 @@ export default function Contact() {
             type="email"
             name="email"
             id="email"
-            className="block w-full mt-2 mb-3 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             required
           />
         </div>
@@ -92,7 +92,7 @@ export default function Contact() {
             type="text"
             name="subject"
             id="subject"
-            className="block w-full mt-2 mb-3 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
             required
           />
         </div>

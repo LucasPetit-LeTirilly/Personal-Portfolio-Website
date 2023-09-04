@@ -3,7 +3,7 @@ import React from "react";
 import BlackCircleMobile from "../../../public/black-circle-mobile-formations.svg";
 import ArrowFormationMobile from "../../../public/arrow-formations-mobile.svg";
 import ArrowFormationDesktop from "../../../public/arrow-formations-desktop.svg";
-import ArrowFormationDesktopWithText from "../../../public/arrow-formations-desktop-with-text.svg";
+import ArrowFormationDesktopWithTextEn from "../../../public/arrow-formations-desktop-with-text-en.svg";
 import { useWindowSize } from "../../lib/customHooks";
 
 export default function Formations() {
@@ -36,15 +36,15 @@ export default function Formations() {
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
               max-[340px]:text-[0.8rem] relative top-[20%]"
               >
-                Master`&apos;`s degree in sound <br /> École Nationale
-                Supérieure Louis-Lumiere
+                Master&apos;s degree in Sound <br /> École Nationale Supérieure
+                Louis-Lumiere
                 <br /> 2021
               </p>
               <p
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
               max-[340px]:text-[0.8rem] relative bottom-[10%]"
               >
-                OpenClassrooms Web Developer Training 2023
+                Web Developer Training OpenClassrooms 2023
               </p>
             </div>
           </div>
@@ -64,14 +64,14 @@ export default function Formations() {
           </h2>
           <div className="relative lg:hidden">
             <div className="flex justify-between mt-8">
-              <p className="font-koho font-medium text-center text-xl relative left-9 lg:left-0">
+              <p className="font-koho font-medium text-center text-xl relative left-3 lg:left-0">
                 Associate degree in Physics
                 <br />
                 Universiy of Rennes 1 <br />
                 2017
               </p>
-              <p className="font-koho font-medium text-center text-xl relative right-2 lg:right-0">
-                OpenClassrooms <br /> Web Developer Training <br /> 2023
+              <p className="font-koho font-medium text-center text-xl relative right-7 lg:right-0">
+                Web Developer Training <br /> OpenClassrooms <br /> 2023
               </p>
             </div>
             <Image
@@ -80,14 +80,14 @@ export default function Formations() {
               className="mt-3 w-[600px] lg:w-full"
             />
             <p className="font-koho font-medium text-center text-xl">
-              Master`&apos;`s degree in sound <br /> École Nationale Supérieure
+              Master&apos;s degree in Sound <br /> École Nationale Supérieure
               Louis-Lumiere
               <br /> 2021
             </p>
           </div>
           <div className="max-lg:hidden w-full pl-10 pr-10 mt-[70px]">
             <Image
-              src={ArrowFormationDesktopWithText}
+              src={ArrowFormationDesktopWithTextEn}
               alt=" Arrow of time of my studies, Associate degree in Physics in 2017, Master's degree in sound at ENS Louis-Lumière in 2021, OpenClassrooms Web Developer training in 2023."
               className="w-full"
             />

@@ -26,7 +26,7 @@ export default function HeroBanner() {
           max-[420px]:text-[9.4vw] min-[790px]:text-[3rem] min-[880px]:text-[4rem] min-[1200px]:text-[4.5rem] min-[1200px]:top-[15%]"
           >
             <div className="relative">
-              <h1>
+              <h1 className="text-center">
                 Lucas Petit - Le Tirilly <br />
                 Fullstack Developer
               </h1>
@@ -44,10 +44,10 @@ export default function HeroBanner() {
           />
           <div
             className="absolute top-[50.15%]  -translate-y-[50%] z-10 font-mainTitle font-bold text-[4rem] whitespace-nowrap
-            min-[1440px]:left-[13%] min-[1540px]:left-[15%] min-[2000px]:text-[4vw]"
+            min-[1440px]:left-[13%] min-[1540px]:left-[15%]"
           >
             <div className="relative">
-              <h1>
+              <h1 className="text-center">
                 Lucas Petit - Le Tirilly <br />
                 Fullstack Developer
               </h1>

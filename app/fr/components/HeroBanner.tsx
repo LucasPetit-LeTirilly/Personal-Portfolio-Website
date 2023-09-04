@@ -44,7 +44,7 @@ export default function HeroBanner() {
           />
           <div
             className="absolute top-[50.15%]  -translate-y-[50%] z-10 font-mainTitle font-bold text-[4rem] whitespace-nowrap
-            min-[1440px]:left-[13%] min-[1540px]:left-[15%] min-[2000px]:text-[4vw]"
+            min-[1440px]:left-[13%] min-[1540px]:left-[15%]"
           >
             <div className="relative">
               <h1>
