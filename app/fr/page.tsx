@@ -6,7 +6,6 @@ import Competences from "./components/Competences";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-// traduire les alt des images en anglais
 export default function Home() {
   return (
     <React.Fragment>
