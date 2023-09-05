@@ -1,25 +1,10 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
+import clsx from "clsx";
+import { styled, Box, Theme } from "@mui/system";
+import { Modal } from "@mui/base/Modal";
+import { Button } from "@mui/base/Button";
 import Image from "next/image";
 import Cross from "../../../public/xmark-solid.svg";
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "90%",
-  height: "90%",
-  bgcolor: "background.paper",
-  borderRadius: "10px",
-  boxShadow: 24,
-  pl: "50px",
-  pr: "40px",
-  pt: 0,
-  pb: 8,
-};
 
 interface Props {
   image: string;
@@ -32,19 +17,21 @@ export default function CarouselModal(props: Props) {
   const handleClose = () => setOpen(false);
   return (
     <div className="h-[35vh] lg:h-[45vh]">
-      <Button onClick={handleOpen} className="w-full h-full">
+      <TriggerButton onClick={handleOpen} className="relative w-full h-full">
         <Image
           src={props.image}
-          alt={`Capture d'écran numéro ${props.index} du site `}
+          alt={`Capture d'écran numéro ${props.index + 1} du site `}
+          sizes="50vw"
           fill={true}
           className="object-cover object-top"
         />
-      </Button>
-      <Modal
+      </TriggerButton>
+      <StyledModal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        slots={{ backdrop: StyledBackdrop }}
       >
         <Box sx={style}>
           <Button
@@ -61,12 +48,74 @@ export default function CarouselModal(props: Props) {
           <div className="relative w-full h-full">
             <Image
               src={props.image}
-              alt={`Capture d'écran numéro ${props.index} du site `}
+              sizes="100vw"
+              alt={`Capture d'écran numéro ${props.index + 1} du site `}
               fill={true}
             />
           </div>
         </Box>
-      </Modal>
+      </StyledModal>
     </div>
   );
 }
+
+const Backdrop = React.forwardRef<
+  HTMLDivElement,
+  { open?: boolean; className: string }
+>((props, ref) => {
+  const { open, className, ...other } = props;
+  return (
+    <div
+      className={clsx({ "MuiBackdrop-open": open }, className)}
+      ref={ref}
+      {...other}
+    />
+  );
+});
+
+Backdrop.displayName = "Backdrop";
+
+const blue = {
+  200: "#99CCF3",
+  400: "#3399FF",
+  500: "#007FFF",
+};
+
+const StyledModal = styled(Modal)`
+  position: fixed;
+  z-index: 1300;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledBackdrop = styled(Backdrop)`
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const style = (theme: Theme) => ({
+  width: "90%",
+  height: "90%",
+  borderRadius: "12px",
+  padding: "16px 32px 24px 32px",
+  backgroundColor: theme.palette.mode === "dark" ? "#0A1929" : "white",
+  overflowY: "scroll",
+  boxShadow: `0px 2px 24px ${
+    theme.palette.mode === "dark" ? "#000" : "#383838"
+  }`,
+});
+
+const TriggerButton = styled("button")(
+  ({ theme }) => `
+  box-sizing: border-box;
+  &:focus-visible {
+    border-color: ${blue[400]};
+    outline: 3px solid ${theme.palette.mode === "dark" ? blue[500] : blue[200]};
+  }
+  `,
+);

@@ -1,26 +1,12 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Modal from "@mui/material/Modal";
+import clsx from "clsx";
+import { styled, Box, Theme } from "@mui/system";
+import { Modal } from "@mui/base/Modal";
+import { Button } from "@mui/base/Button";
 import Cross from "../../../public/xmark-solid.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { Carousel } from "./Carousel";
-
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: "90%",
-  height: "90%",
-  bgcolor: "background.paper",
-  boxShadow: 24,
-  p: 3,
-  pt: 2,
-  outline: 0,
-  overflowY: "scroll",
-};
 
 interface Data {
   title: string;
@@ -36,16 +22,20 @@ interface Props {
   data: Data;
 }
 
-export default function BasicModal(props: Props) {
+export default function NestedModal(props: Props) {
   const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
-      <Button
+      <TriggerButton
         onClick={handleOpen}
-        className="w-[100%] h-[25vh] lg:h-[28vh] hover:bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
+        className="relative w-[100%] h-[25vh] lg:h-[28vh] bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
       >
         <p
           className="text-white font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
@@ -58,19 +48,24 @@ export default function BasicModal(props: Props) {
         </p>
         <Image
           src={props.data.images[0]}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill={true}
           alt="Projet"
           className="hover:opacity-0 object-cover object-top"
         />
-      </Button>
-      <Modal
+      </TriggerButton>
+      <StyledModal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        slots={{ backdrop: StyledBackdrop }}
       >
         <Box sx={style}>
-          <Button onClick={handleClose} className="w-full flex justify-end">
+          <Button
+            onClick={handleClose}
+            className="relative w-full flex justify-end"
+          >
             <Image src={Cross} alt="Fermer la fenêtre" width={30} height={40} />
           </Button>
           <div className="lg:flex">
@@ -121,7 +116,68 @@ export default function BasicModal(props: Props) {
             </div>
           </div>
         </Box>
-      </Modal>
+      </StyledModal>
     </article>
   );
 }
+
+const Backdrop = React.forwardRef<
+  HTMLDivElement,
+  { open?: boolean; className: string }
+>((props, ref) => {
+  const { open, className, ...other } = props;
+  return (
+    <div
+      className={clsx({ "MuiBackdrop-open": open }, className)}
+      ref={ref}
+      {...other}
+    />
+  );
+});
+
+Backdrop.displayName = "Backdrop";
+
+const blue = {
+  200: "#99CCF3",
+  400: "#3399FF",
+  500: "#007FFF",
+};
+
+const StyledModal = styled(Modal)`
+  position: fixed;
+  z-index: 1300;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const StyledBackdrop = styled(Backdrop)`
+  z-index: -1;
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const style = (theme: Theme) => ({
+  width: "90%",
+  height: "90%",
+  borderRadius: "12px",
+  padding: "16px 32px 24px 32px",
+  backgroundColor: theme.palette.mode === "dark" ? "#0A1929" : "white",
+  overflowY: "scroll",
+  boxShadow: `0px 2px 24px ${
+    theme.palette.mode === "dark" ? "#000" : "#383838"
+  }`,
+});
+
+const TriggerButton = styled("button")(
+  ({ theme }) => `
+  box-sizing: border-box;
+  &:focus-visible {
+    border-color: ${blue[400]};
+    outline: 3px solid ${theme.palette.mode === "dark" ? blue[500] : blue[200]};
+  }
+  `,
+);

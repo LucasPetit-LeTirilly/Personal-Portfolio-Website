@@ -54,7 +54,7 @@ export default function HeroBanner() {
               <div className="absolute top-[50%] w-[108%] h-[3px] bg-black -translate-x-[4%]"></div>
             </div>
           </div>
-          <Link href="#projets-recents">
+          <Link href="#recent-projects">
             <Image
               className="absolute top-[92%] left-[50%] -translate-x-[50%]"
               src={LogoArrowDown}

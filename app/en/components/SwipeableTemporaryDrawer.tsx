@@ -8,6 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import Image from "next/image";
 import Link from "next/link";
+import CollapseMenuLogo from "../../../public/bars-solid.svg";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -74,7 +75,7 @@ export default function SwipeableTemporaryDrawer() {
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
             <Image
-              src="bars-solid.svg"
+              src={CollapseMenuLogo}
               alt="Open the navigation bar"
               width={40}
               height={45.71}
