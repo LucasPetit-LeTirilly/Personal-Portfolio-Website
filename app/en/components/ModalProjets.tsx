@@ -44,7 +44,7 @@ export default function NestedModal(props: Props) {
           {props.data.title}
         </p>
         <p className="text-white font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
-        Clic to dispay details
+          Clic to dispay details
         </p>
         <Image
           src={props.data.images[0]}
@@ -89,7 +89,7 @@ export default function NestedModal(props: Props) {
                 Link to the GitHub repo
               </Link>
               <p className="mt-4 font-koho text-2xl font-normal">
-              Skills acquired:
+                Skills acquired:
               </p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.competences}
@@ -99,7 +99,7 @@ export default function NestedModal(props: Props) {
           <div className="lg:flex gap-5">
             <div className="flex-[1_1_0]">
               <p className="font-koho text-2xl font-normal mt-2">
-              Description:
+                Description:
               </p>
               <p
                 id="modal-modal-description"
@@ -109,7 +109,9 @@ export default function NestedModal(props: Props) {
               </p>
             </div>
             <div className="flex-[1_1_0]">
-              <p className="font-koho text-2xl font-normal mt-2">Enjeux :</p>
+              <p className="font-koho text-2xl font-normal mt-2">
+                Challenges :
+              </p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.problemes}
               </p>
