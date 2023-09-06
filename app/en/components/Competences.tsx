@@ -39,9 +39,7 @@ export default function Competences() {
             />
             <h2
               className="font-heading font-bold text-2xl text-white absolute top-9 left-[50%] -translate-x-[50%] 
-            min-[620px]:text-[3.8vw] lg:text-[3vw]
           min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px]
-          min-[1930px]:mt-[3vw]
           "
             >
               Skills
@@ -86,7 +84,7 @@ export default function Competences() {
         ) : (
           <div
             className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[107vw] min-[1300px]:grid-rows-[103vw] 
-             min-[2000px]:grid-rows-[97vw] overflow-y-hidden"
+             overflow-y-hidden"
           >
             <Image
               src={Margin}

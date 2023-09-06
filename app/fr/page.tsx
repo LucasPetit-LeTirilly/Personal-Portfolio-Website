@@ -15,8 +15,8 @@ export default function Home() {
         <ProjetsRecents />
         <Competences />
         <Contact />
-        <Footer />
       </main>
+        <Footer />
     </React.Fragment>
   );
 }

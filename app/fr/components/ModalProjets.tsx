@@ -30,7 +30,6 @@ export default function NestedModal(props: Props) {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
       <TriggerButton

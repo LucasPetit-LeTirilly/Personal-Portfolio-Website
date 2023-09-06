@@ -31,9 +31,7 @@ export default function Contact() {
           />
           <h2
             className="font-heading font-bold text-2xl text-white absolute top-9 left-[50%] -translate-x-[50%] z-10 
-            min-[620px]:text-[3.8vw] lg:text-[3vw]
           min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px]
-          min-[1930px]:mt-[3vw]
           "
           >
             Contact

@@ -56,7 +56,7 @@ export default function Formations() {
           />
           <h2
             className="font-heading font-normal absolute text-white top-[17%] lg:top-[16.5%] left-[50%] -translate-x-[50%]
-          min-[620px]:text-[2rem] lg:text-[3vw]"
+          min-[620px]:text-[2rem]"
           >
             Formations
           </h2>
