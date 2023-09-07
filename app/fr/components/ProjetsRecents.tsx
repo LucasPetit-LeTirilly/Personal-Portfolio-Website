@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import BlackEllipseMobile from "../../../public/black-ellipse-mobile-projets-recents.svg";
+import BlackEllipseMobile from "../../../public/black-ellipse-mobile-projets-recents.png";
 import BlackEllipseDesktop from "../../../public/black-ellipse-desktop-projets-recents.svg";
 import ModalProjets from "./ModalProjets";
 import { descriptionsProjets } from "../descriptionsProjets";
@@ -12,11 +12,10 @@ export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
   return (
     <section className="relative">
-      
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
-            className="relative top-[0] left-[49.7%] -translate-x-[50%] w-[200px]"
+            className="relative top-[0] left-[49.7%] -translate-x-[50%] w-[204.3px]"
             src={BlackEllipseMobile}
             alt="Demi-cercle noir"
           />
