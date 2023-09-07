@@ -39,7 +39,7 @@ export default function ProjetsRecents() {
               id="recent-projects"
               className="absolute left-[50%] -translate-x-[50%] whitespace-nowrap 
               font-heading font-bold min-[620px]:mt-[1rem] max-[790px]:text-black 
-              text-[3rem]
+              text-[2rem] lg:text-[3rem]
               min-[790px]:top-[5px] min-[1440px]:top-[15px]
               text-white w-fit"
             >

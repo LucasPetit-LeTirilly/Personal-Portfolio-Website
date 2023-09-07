@@ -30,7 +30,7 @@ export default function Contact() {
             className="relative top-0 left-[50%] -translate-x-[50%] w-[33%] lg:w-[25%] z-10"
           />
           <h2
-            className="font-heading font-bold text-2xl text-white absolute top-9 left-[50%] -translate-x-[50%] z-10 
+            className="font-heading font-bold text-[2rem] lg:text-[3rem] text-white absolute top-9 left-[50%] -translate-x-[50%] z-10 
           min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px]
           "
           >

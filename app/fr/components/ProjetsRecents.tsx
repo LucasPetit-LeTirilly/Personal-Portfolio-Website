@@ -31,7 +31,7 @@ export default function ProjetsRecents() {
         <React.Fragment>
           <div className="relative mb-[7rem] max-[790px]:absolute max-[790px]:left-[50%] max-[790px]:bottom-[105%] lg:mb-5 z-10">
             <Image
-              className="relative max-[790px]:hidden top-[0] left-[49.7%] -translate-x-[50%] w-[28%]"
+              className="relative max-[790px]:hidden top-[0] left-[49.7%] -translate-x-[50%] w-[33%]"
               src={BlackEllipseDesktop}
               alt="Demi-cercle noir"
             />
@@ -39,7 +39,7 @@ export default function ProjetsRecents() {
               id="projets-recents"
               className="absolute left-[50%] -translate-x-[50%] whitespace-nowrap 
               font-heading font-bold min-[620px]:mt-[1rem] max-[790px]:text-black 
-              text-[3rem]
+              text-[2rem] lg:text-[3rem]
               min-[790px]:top-[5px] min-[1440px]:top-[15px]
               text-white w-fit"
             >
