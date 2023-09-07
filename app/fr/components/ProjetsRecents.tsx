@@ -12,6 +12,7 @@ export default function ProjetsRecents() {
   const { windowSize } = useWindowSize();
   return (
     <section className="relative">
+      
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image

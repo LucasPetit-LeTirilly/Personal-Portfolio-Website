@@ -50,7 +50,7 @@ export default function NestedModal(props: Props) {
           src={props.data.images[0]}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill={true}
-          alt="Project"
+          alt={props.data.title}
           className="hover:opacity-0 object-cover object-top"
         />
       </TriggerButton>

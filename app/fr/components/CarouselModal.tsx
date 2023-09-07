@@ -17,7 +17,10 @@ export default function CarouselModal(props: Props) {
   const handleClose = () => setOpen(false);
   return (
     <div className="h-[35vh] lg:h-[45vh]">
-      <TriggerButton onClick={handleOpen} className="relative block w-full h-full">
+      <TriggerButton
+        onClick={handleOpen}
+        className="relative block w-full h-full"
+      >
         <Image
           src={props.image}
           alt={`Capture d'écran numéro ${props.index + 1} du site `}
