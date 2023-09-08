@@ -2,13 +2,38 @@
 
 import React from "react";
 import Image from "next/image";
+import { useForm, SubmitHandler } from "react-hook-form";
 import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
 import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
 import BlackSquare from "../../../public/black-square.svg";
 import { useWindowSize } from "../../lib/customHooks";
 
+type Inputs = {
+  surname: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 export default function Contact() {
   const { windowSize } = useWindowSize();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const jsonData = JSON.stringify(data);
+    fetch("http://localhost:3000/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonData,
+    }).then(() => console.log("data envoyée vers le backend"));
+  };
   return (
     <section id="contact" className="relative pl-5 pr-5 pb-[3rem]">
       {(windowSize.width ?? 0) < 620 ? (
@@ -39,8 +64,7 @@ export default function Contact() {
         </React.Fragment>
       )}
       <form
-        action={"adresse a enter"}
-        method="get"
+        onSubmit={handleSubmit(onSubmit)}
         className="relative min-[620px]:w-[70%] lg:w-[50%] bg-grey rounded-[2rem] font-koho font-bold text-base mt-5 
         min-[620px]:ml-[auto] min-[620px]:mr-[auto] p-5 lg:p-[2.5rem] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] z-10"
       >
@@ -56,54 +80,40 @@ export default function Contact() {
             <label htmlFor="surname">Nom</label>
             <br />
             <input
-              type="text"
-              name="surname"
-              id="surname"
+              {...register("surname")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              required
             />
           </div>
           <div className="flex-[1_1_0]">
             <label htmlFor="name">Prénom</label>
             <br />
             <input
-              type="text"
-              name="name"
-              id="name"
+              {...register("name")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              required
             />
           </div>
         </div>
         <div>
           <label htmlFor="email">Votre e-mail</label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            {...register("email")}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
           />
         </div>
         <div>
           <label htmlFor="subject">Objet</label>
           <input
-            type="text"
-            name="subject"
-            id="subject"
+            {...register("subject")}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
           />
         </div>
         <div>
           <label htmlFor="message">Votre message</label>
           <textarea
-            id="message"
-            name="message"
+            {...register("message")}
             rows={5}
             cols={20}
-            className="block w-full mt-2 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
+            className="block w-full mt-2 p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           ></textarea>
         </div>
         <input
