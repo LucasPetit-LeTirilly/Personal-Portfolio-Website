@@ -15,22 +15,20 @@ let transporter = nodemailer.createTransport({
   },
 });
 
-let mailOptions = {
-  from: "lucaspetitletirilly.formsend@gmail.com",
-  to: "lucaspetitletirilly.formsend@gmail.com",
-  subject: "Test envoi mail avec le formulaire",
-  text: "Hello",
-};
-
 export async function POST(request: Request) {
-  // transporter.sendMail(mailOptions, function (err, data) {
-  //   if (err) {
-  //     console.log("Error " + err);
-  //   } else {
-  //     console.log("Email sent successfully");
-  //   }
-  // });
   const res = await request.json();
-  console.log(res.surname);
-  return NextResponse.json({ res });
+  let mailOptions = {
+    from: res.email,
+    to: "lucaspetitletirilly.formsend@gmail.com",
+    subject: res.subject,
+    text: `Nom: ${res.surname}, Prenom: ${res.name}, Message:${res.message}`,
+  };
+  transporter.sendMail(mailOptions, function (err: any) {
+    if (err) {
+      console.log("Error " + err);
+    } else {
+      console.log("Email sent successfully");
+    }
+  });
+  return NextResponse.json({ message: "Email envoyé" });
 }
