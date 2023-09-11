@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useForm, SubmitHandler } from "react-hook-form";
 import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
@@ -18,6 +19,7 @@ type Inputs = {
 
 export default function Contact() {
   const { windowSize } = useWindowSize();
+  const [emailSent, setEmailSent] = useState("initialState");
   const {
     register,
     handleSubmit,
@@ -32,8 +34,26 @@ export default function Contact() {
         "Content-Type": "application/json",
       },
       body: jsonData,
-    }).then(() => console.log("data envoyée vers le backend"));
+    }).then((res) =>
+      res.status === 200
+        ? setEmailSent("emailSent")
+        : setEmailSent("emailNotSent"),
+    );
   };
+  let emailConfirmation = null;
+  if (emailSent === "emailSent") {
+    emailConfirmation = <p className="text-center pt-4">Message envoyé</p>;
+  } else if (emailSent === "emailNotSent") {
+    emailConfirmation = (
+      <p className="text-center pt-4">
+        Un problème est survenu et le message n&apos;a pas pu être envoyé.
+        Veuillez me contacter directement à l&apos;adresse mail suivante:{" "}
+        <a href="mailto:lucas.letirilly.petit@gmail.com" className="underline">
+          lucas.letirilly.petit@gmail.com
+        </a>
+      </p>
+    );
+  }
   return (
     <section id="contact" className="relative pl-5 pr-5 pb-[3rem]">
       {(windowSize.width ?? 0) < 620 ? (
@@ -71,7 +91,10 @@ export default function Contact() {
         <p className="text-center">
           Vous pouvez me contacter via le formulaire ci-dessous ou directement
           via mon e-mail:{" "}
-          <a href="mailto:lucas.letirilly.petit@gmail.com">
+          <a
+            href="mailto:lucas.letirilly.petit@gmail.com"
+            className="underline"
+          >
             lucas.letirilly.petit@gmail.com
           </a>
         </p>
@@ -96,7 +119,7 @@ export default function Contact() {
         <div>
           <label htmlFor="email">Votre e-mail</label>
           <input
-            {...register("email")}
+            {...register("email", { required: true })}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           />
         </div>
@@ -122,6 +145,7 @@ export default function Contact() {
           className="block text-xl text-white font-normal font-koho bg-light-brown 
           rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-2 pl-6 pr-6 mt-8 ml-auto mr-auto"
         />
+        {emailConfirmation}
       </form>
       <Image
         src={BlackSquare}

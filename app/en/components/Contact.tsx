@@ -1,21 +1,66 @@
 "use client";
 
 import React from "react";
+import { useState } from "react";
 import Image from "next/image";
+import { useForm, SubmitHandler } from "react-hook-form";
 import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
 import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
 import BlackSquare from "../../../public/black-square.svg";
 import { useWindowSize } from "../../lib/customHooks";
 
+type Inputs = {
+  surname: string;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
+
 export default function Contact() {
   const { windowSize } = useWindowSize();
+  const [emailSent, setEmailSent] = useState("initialState");
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const jsonData = JSON.stringify(data);
+    fetch("http://localhost:3000/api/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonData,
+    }).then((res) =>
+      res.status === 200
+        ? setEmailSent("emailSent")
+        : setEmailSent("emailNotSent"),
+    );
+  };
+  let emailConfirmation = null;
+  if (emailSent === "emailSent") {
+    emailConfirmation = <p className="text-center pt-4">Message sent</p>;
+  } else if (emailSent === "emailNotSent") {
+    emailConfirmation = (
+      <p className="text-center pt-4">
+        An error happened and the message could not be sent. Please contact me
+        directly at this email adress: :{" "}
+        <a href="mailto:lucas.letirilly.petit@gmail.com" className="underline">
+          lucas.letirilly.petit@gmail.com
+        </a>
+      </p>
+    );
+  }
   return (
     <section id="contact" className="relative pl-5 pr-5 pb-[3rem]">
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
             src={BlackEllipsisMobile}
-            alt="Black half-circle"
+            alt="Demi-cercle noir"
             className="relative top-0 left-[50%] -translate-x-[50%] w-[232px]"
           />
           <h2 className="font-heading text-[1.8rem] text-white absolute top-6 left-[50%] -translate-x-[50%]">
@@ -26,7 +71,7 @@ export default function Contact() {
         <React.Fragment>
           <Image
             src={BlackEllipsisDesktop}
-            alt="Black half-circle"
+            alt="Demi-cercle noir"
             className="relative top-0 left-[50%] -translate-x-[50%] w-[33%] lg:w-[25%] z-10"
           />
           <h2
@@ -39,14 +84,16 @@ export default function Contact() {
         </React.Fragment>
       )}
       <form
-        action={"adresse a enter"}
-        method="get"
+        onSubmit={handleSubmit(onSubmit)}
         className="relative min-[620px]:w-[70%] lg:w-[50%] bg-grey rounded-[2rem] font-koho font-bold text-base mt-5 
         min-[620px]:ml-[auto] min-[620px]:mr-[auto] p-5 lg:p-[2.5rem] drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] z-10"
       >
         <p className="text-center">
           Contact me through the form below or directly at:{" "}
-          <a href="mailto:lucas.letirilly.petit@gmail.com">
+          <a
+            href="mailto:lucas.letirilly.petit@gmail.com"
+            className="underline"
+          >
             lucas.letirilly.petit@gmail.com
           </a>
         </p>
@@ -55,66 +102,53 @@ export default function Contact() {
             <label htmlFor="surname">Surname</label>
             <br />
             <input
-              type="text"
-              name="surname"
-              id="surname"
+              {...register("surname")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              required
             />
           </div>
           <div className="flex-[1_1_0]">
             <label htmlFor="name">Name</label>
             <br />
             <input
-              type="text"
-              name="name"
-              id="name"
+              {...register("name")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-              required
             />
           </div>
         </div>
         <div>
           <label htmlFor="email">Your email</label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            {...register("email", { required: true })}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
           />
         </div>
         <div>
           <label htmlFor="subject">Subject</label>
           <input
-            type="text"
-            name="subject"
-            id="subject"
+            {...register("subject")}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
           />
         </div>
         <div>
           <label htmlFor="message">Your message</label>
           <textarea
-            id="message"
-            name="message"
+            {...register("message")}
             rows={5}
             cols={20}
-            className="block w-full mt-2 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-            required
+            className="block w-full mt-2 p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
           ></textarea>
         </div>
         <input
           type="submit"
-          value="Submit"
+          value="Envoyer"
           className="block text-xl text-white font-normal font-koho bg-light-brown 
           rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-2 pl-6 pr-6 mt-8 ml-auto mr-auto"
         />
+        {emailConfirmation}
       </form>
       <Image
         src={BlackSquare}
-        alt="Background black square"
+        alt="Carré noir en fond"
         className="absolute top-[0%] left-[50%] -translate-x-[50%] z-0
       max-lg:hidden"
       />
