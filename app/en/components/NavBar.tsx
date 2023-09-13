@@ -32,7 +32,7 @@ export default function NavBar() {
             <Image
               src={LogoHome}
               alt="Back to Home"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
           <Link
@@ -44,7 +44,7 @@ export default function NavBar() {
             <Image
               src={LogoGithub}
               alt="To my GitHub page"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
           <Link
@@ -56,7 +56,7 @@ export default function NavBar() {
             <Image
               src={LogoLinkedIn}
               alt="To my LinkedIn page"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
         </nav>
@@ -65,20 +65,20 @@ export default function NavBar() {
           <SwipeableTemporaryDrawer />
           <div className="hidden sm:flex flex-row items-center gap-10 max-[780px]:gap-5">
             <Link href="#recent-projects">
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 Recent Projects
               </p>
             </Link>
             <Link href="#skills">
-              <p className="text-white font-koho font-medium text-lg">Skills</p>
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">Skills</p>
             </Link>
             <Link href="#contact">
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 Contact
               </p>
             </Link>
             <Link href={process.env.NEXT_PUBLIC_WEBSITE_FRENCH_URL}>
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 In French
               </p>
             </Link>

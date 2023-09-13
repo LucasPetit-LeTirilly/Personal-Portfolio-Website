@@ -32,7 +32,7 @@ export default function NavBar() {
             <Image
               src={LogoHome}
               alt="Retour à l'accueil"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
           <Link
@@ -44,7 +44,7 @@ export default function NavBar() {
             <Image
               src={LogoGithub}
               alt="Lien vers ma page github"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
           <Link
@@ -56,7 +56,7 @@ export default function NavBar() {
             <Image
               src={LogoLinkedIn}
               alt="Lien vers ma page linkedIn"
-              className="w-[40px] h-[40px]"
+              className="w-[40px] h-[40px] hover:brightness-75"
             />
           </Link>
         </nav>
@@ -65,22 +65,22 @@ export default function NavBar() {
           <SwipeableTemporaryDrawer />
           <div className="hidden sm:flex flex-row items-center gap-10 max-[780px]:gap-5">
             <Link href="#projets-recents">
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 Projets Récents
               </p>
             </Link>
             <Link href="#competences">
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 Compétences
               </p>
             </Link>
             <Link href="#contact">
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 Contact
               </p>
             </Link>
             <Link href={process.env.NEXT_PUBLIC_WEBSITE_ENGLISH_URL}>
-              <p className="text-white font-koho font-medium text-lg">
+              <p className="text-white font-koho font-medium text-lg hover:brightness-75">
                 In English
               </p>
             </Link>

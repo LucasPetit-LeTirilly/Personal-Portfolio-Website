@@ -16,8 +16,8 @@ export default function CarouselModal(props: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div className="h-[35vh] lg:h-[45vh]">
-      <TriggerButton
+    <div className="relative h-[35vh] lg:h-[45vh] flex-[1_1_0]">
+      {/* <TriggerButton
         onClick={handleOpen}
         className="relative block w-full h-full"
       >
@@ -28,8 +28,15 @@ export default function CarouselModal(props: Props) {
           fill={true}
           className="object-cover object-top"
         />
-      </TriggerButton>
-      <StyledModal
+      </TriggerButton> */}
+      <Image
+        src={props.image}
+        alt={`Capture d'écran numéro ${props.index + 1} du site `}
+        sizes="50vw"
+        fill={true}
+        className="object-cover object-top"
+      />
+      {/* <StyledModal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -57,7 +64,7 @@ export default function CarouselModal(props: Props) {
             />
           </div>
         </Box>
-      </StyledModal>
+      </StyledModal> */}
     </div>
   );
 }

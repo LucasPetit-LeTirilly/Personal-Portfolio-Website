@@ -16,17 +16,27 @@ export default function CarouselModal(props: Props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
-    <div className="h-[35vh] lg:h-[45vh]">
-      <TriggerButton onClick={handleOpen} className="relative w-full h-full">
+    <div className="relative h-[35vh] lg:h-[45vh] flex-[1_1_0]">
+      {/* <TriggerButton
+        onClick={handleOpen}
+        className="relative block w-full h-full"
+      >
         <Image
           src={props.image}
-          alt={`Screen capture number ${props.index + 1} of the app`}
+          alt={`Capture d'écran numéro ${props.index + 1} du site `}
           sizes="50vw"
           fill={true}
           className="object-cover object-top"
         />
-      </TriggerButton>
-      <StyledModal
+      </TriggerButton> */}
+      <Image
+        src={props.image}
+        alt={`Screen capture number ${props.index + 1} of the app `}
+        sizes="50vw"
+        fill={true}
+        className="object-cover object-top"
+      />
+      {/* <StyledModal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
@@ -40,21 +50,21 @@ export default function CarouselModal(props: Props) {
           >
             <Image
               src={Cross}
-              alt={"Close the image zoom window"}
+              alt={"Fermeture de la fenêtre de zoom sur l'image"}
               width={30}
               height={40}
             />
           </Button>
-          <div className="relative w-full h-full">
+          <div className="relative block w-full h-full">
             <Image
               src={props.image}
               sizes="100vw"
-              alt={`Screen capture number ${props.index + 1} of the app`}
+              alt={`Capture d'écran numéro ${props.index + 1} du site `}
               fill={true}
             />
           </div>
         </Box>
-      </StyledModal>
+      </StyledModal> */}
     </div>
   );
 }

@@ -141,7 +141,7 @@ export default function Contact() {
         <input
           type="submit"
           value="Send"
-          className="block text-xl text-white font-normal font-koho bg-light-brown 
+          className="block text-xl text-white font-normal font-koho bg-light-brown hover:bg-[#6b3c1d]
           rounded-2xl drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] p-2 pl-6 pr-6 mt-8 ml-auto mr-auto"
         />
         {emailConfirmation}

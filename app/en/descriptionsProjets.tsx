@@ -25,9 +25,9 @@ export const descriptionsProjets = [
     description:
       "Development of the backend side of an book rating app. Built with Node.js and Express.js as the framework. The app allow the user to sign up, sign in and then post, rate, delete and update infos about the book they have read. The user can also rate books posted by other users. The backend handles all the CRUD functionalities and is secrued, it manages also the reading and writing of a MongoDatabase.",
     competences:
-      "Utilisation de Node.js, Express.js et MongoDB. Ainsi que la création et l'utilisation de middlewares d'authentification, de gestion et de compression d'images, de validation d'inputs. J'ai également été amené a utiliser des packages, notamment de cryptographie et de sécurisation des headers. Node.js, Express.js and MongoDB. As well as how to create and use middlewares about authentication, images upload and compression, input validation. I also used, among others, cryptographic and header securing packages.",
+      "Node.js, Express.js and MongoDB. As well as how to create and use middlewares about authentication, images upload and compression, input validation. I also used, among others, cryptographic and header securing packages.",
     problemes:
-      "Le défi était de faire un backend CRUD avec une API Restfull qui était sécurisé via un système de token délivré à la connection puis demandé à l'utilisateur à chaque action. Building a CRUB backend with a Restfull API, secured through tokens, who are initialy delivered then requested from the user at each request.",
+      "Building a CRUB backend with a Restfull API, secured through tokens, who are initialy delivered then requested from the user at each request.",
   },
   {
     title: "Optimization/SEO project of the OpenClassrooms training program",

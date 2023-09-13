@@ -20,7 +20,7 @@ export function Carousel(props: Props) {
   }, [emblaApi]);
 
   return (
-    <div className="embla overflow-hidden lg:w-[160%]">
+    <div className="embla overflow-hidden lg:w-[160%] flex-[1_1_0]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex">
           {props.images.map((image, index) => (

@@ -70,7 +70,7 @@ export default function NestedModal(props: Props) {
           </Button>
           <div className="lg:flex">
             <Carousel images={props.data.images} />
-            <div className="lg:ml-5">
+            <div className="lg:ml-5 flex-[1_1_0]">
               <h3
                 id="modal-modal-title"
                 className="font-koho text-2xl font-normal text-center mt-4"

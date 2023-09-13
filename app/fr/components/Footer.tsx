@@ -19,6 +19,7 @@ export default function Footer() {
               width={40}
               height={40}
               alt="Vers ma page GitHub"
+              className="hover:brightness-75"
             />
           </Link>
           <Link
@@ -31,20 +32,14 @@ export default function Footer() {
               width={40}
               height={40}
               alt="Vers ma page LinkedIn"
+              className="hover:brightness-75"
             />
           </Link>
         </div>
         <div className="border-white border-t-[7px] w-[85%] mt-5"></div>
-        <p className="text-white text-[2rem] text-center mt-5">
+        <p className="text-white text-[2rem] text-center mt-5 mb-10">
           Réalisé par Lucas Petit - Le Tirilly
         </p>
-        <Image
-          src={LogoFooter}
-          width={40}
-          height={40}
-          alt="Porte ouverte vers un désert étoilé"
-          className="mt-5 mb-8"
-        />
       </div>
     </footer>
   );
