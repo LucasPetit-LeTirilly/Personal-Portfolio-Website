@@ -35,11 +35,11 @@ export default function Competences() {
             <Image
               src={BlackEllipsisDesktop}
               alt="Demi-cercle noir"
-              className="absolute top-0 left-[50%] -translate-x-[50%] w-[33%] lg:w-[25%]"
+              className="absolute top-0 left-[50%] -translate-x-[50%] w-[300px] lg:w-[400px]"
             />
             <h2
               className="font-heading font-bold text-[2rem] lg:text-[3rem] text-white absolute top-9 left-[50%] -translate-x-[50%] 
-          min-[620px]:top-[24px] min-[790px]:top-[40px] lg:mt-[-15px] min-[1150px]:mt-[10px]
+          min-[620px]:top-[24px] lg:mt-[10px]
           "
             >
               Compétences
@@ -83,7 +83,7 @@ export default function Competences() {
           </React.Fragment>
         ) : (
           <div
-            className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[107vw] min-[1300px]:grid-rows-[103vw] 
+            className="lg:grid lg:grid-cols-[1fr_1fr_1fr] lg:grid-rows-[110vw] min-[1300px]:grid-rows-[103vw] 
              overflow-y-hidden"
           >
             <Image

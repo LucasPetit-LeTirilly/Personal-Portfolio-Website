@@ -54,10 +54,10 @@ export default function Formations() {
           <Image
             src={BlackCircleMobile}
             alt="Black circle"
-            className="max-[1024px]:w-[200px] w-[25%] mt-5"
+            className="max-[1024px]:w-[200px] lg:w-[300px] mt-5"
           />
           <h2
-            className="font-heading font-normal absolute text-white top-[17%] lg:top-[16.5%] left-[50%] -translate-x-[50%]
+            className="font-heading font-normal absolute text-white top-[17%] lg:top-[130px] left-[50%] -translate-x-[50%]
             text-[2rem] lg:text-[3rem]"
           >
             Studies
@@ -76,7 +76,7 @@ export default function Formations() {
             </div>
             <Image
               src={ArrowFormationDesktop}
-              alt="Flèche chronologique de mes formations"
+              alt="Arrow of time of my studies"
               className="mt-3 w-[600px] lg:w-full"
             />
             <p className="font-koho font-medium text-center text-xl">
@@ -85,7 +85,7 @@ export default function Formations() {
               <br /> 2021
             </p>
           </div>
-          <div className="max-lg:hidden w-full pl-10 pr-10 mt-[70px]">
+          <div className="max-lg:hidden w-full pl-10 pr-10">
             <Image
               src={ArrowFormationDesktopWithTextEn}
               alt=" Arrow of time of my studies, Associate degree in Physics in 2017, Master's degree in sound at ENS Louis-Lumière in 2021, OpenClassrooms Web Developer training in 2023."

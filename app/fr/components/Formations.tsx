@@ -52,10 +52,10 @@ export default function Formations() {
           <Image
             src={BlackCircleMobile}
             alt="Cercle noir"
-            className="max-[1024px]:w-[200px] w-[25%] mt-5"
+            className="max-[1024px]:w-[200px] lg:w-[300px] mt-5"
           />
           <h2
-            className="font-heading font-normal absolute text-white top-[17%] lg:top-[16.5%] left-[50%] -translate-x-[50%]
+            className="font-heading font-normal absolute text-white top-[17%] lg:top-[130px] left-[50%] -translate-x-[50%]
             text-[2rem] lg:text-[3rem]"
           >
             Formations
@@ -81,7 +81,7 @@ export default function Formations() {
               <br /> 2021
             </p>
           </div>
-          <div className="max-lg:hidden w-full pl-10 pr-10 mt-[70px]">
+          <div className="max-lg:hidden w-full pl-10 pr-10">
             <Image
               src={ArrowFormationDesktopWithText}
               alt="Flèche chronologique de mes formations: License 2 de Physique en 2017, Master Son ENS Louis-Lumière en 2021,
