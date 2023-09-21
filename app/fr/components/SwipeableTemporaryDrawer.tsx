@@ -78,7 +78,7 @@ export default function SwipeableTemporaryDrawer() {
               src={CollapseMenuLogo}
               alt="Ouvrir le menu de navigation"
               width={40}
-              height={45.71}
+              height={45}
             />
           </Button>
           <SwipeableDrawer
