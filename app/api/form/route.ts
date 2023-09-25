@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     from: "lucaspetitletirilly.formsend@gmail.com",
     to: "lucaspetitletirilly.formsend@gmail.com",
     subject: res.subject,
-    text: `Nom: ${res.surname}, Prenom: ${res.name}, Message:${res.message} Email:${res.email}`,
+    text: `Nom: ${res.surname}, Prenom: ${res.name}, Message:${res.message} Email: ${res.email}`,
   };
   try {
     await transporter.sendMail(mailOptions);
