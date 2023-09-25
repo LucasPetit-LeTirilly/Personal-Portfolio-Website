@@ -9,8 +9,8 @@ let transporter = nodemailer.createTransport({
   host: "smtp.sendgrid.net",
   port: 465,
   auth: {
-    user: process.env.MAIL_USERNAME,
-    pass: process.env.MAIL_PASSWORD,
+    user: process.env.NEXT_PUBLIC_MAIL_USERNAME,
+    pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,
   },
 });
 
