@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoGithub from "../../../public/logo-github.svg";
 import LogoLinkedin from "../../../public/logo-linkedin.svg";
-import LogoFooter from "../../../public/logo-footer.svg";
 
 export default function Footer() {
   return (
@@ -40,6 +39,7 @@ export default function Footer() {
         <p className="text-white text-[2rem] text-center mt-5 mb-10">
           Réalisé par Lucas Petit - Le Tirilly
         </p>
+        <p>{process.env.NEXT_PUBLIC_MAIL_PASSWORD}</p>
       </div>
     </footer>
   );
