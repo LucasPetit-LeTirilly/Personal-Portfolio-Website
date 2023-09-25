@@ -1,5 +1,7 @@
 "use strict";
 import { NextResponse } from "next/server";
+const dotenv = require("dotenv");
+dotenv.config();
 
 const nodemailer = require("nodemailer");
 
