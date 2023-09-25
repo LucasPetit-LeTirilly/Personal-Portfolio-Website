@@ -18,18 +18,14 @@ export async function POST(request: Request) {
     from: "lucaspetitletirilly.formsend@gmail.com",
     to: "lucaspetitletirilly.formsend@gmail.com",
     subject: res.subject,
-    text: `Nom: ${res.surname}, Prenom: ${res.name}, Message:${res.message} Email: ${res.email}`,
+    text: `Nom: ${res.surname}, Prenom: ${res.name}, Message:${res.message} Email:${res.email}`,
   };
   try {
     await transporter.sendMail(mailOptions);
-    return new Response("Email sent successfully", {
-      status: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-      },
-    });
+    return NextResponse.json(
+      { message: "Email sent successfully!" },
+      { status: 200 },
+    );
   } catch (err: any) {
     return NextResponse.json({ message: err.toString() }, { status: 500 });
   }
