@@ -28,7 +28,7 @@ export default function Contact() {
   } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const jsonData = JSON.stringify(data);
-    fetch("http://lucaspetitletirilly.com/api/form", {
+    fetch("https://lucaspetitletirilly.com/api/form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
