@@ -21,9 +21,8 @@ export default function Formations() {
               className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
           max-[340px]:text-[0.8rem] relative top-[45%]"
             >
-              License 2 Physique <br />
-              Université de Rennes 1 <br />
-              2017
+              Master Son <br /> École Nationale Supérieure Louis-Lumiere
+              <br /> 2021
             </p>
             <Image
               src={ArrowFormationMobile}
@@ -35,8 +34,9 @@ export default function Formations() {
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
               max-[340px]:text-[0.8rem] relative top-[20%]"
               >
-                Master Son <br /> École Nationale Supérieure Louis-Lumiere
-                <br /> 2021
+                License 2 Physique <br />
+                Université de Rennes 1 <br />
+                2017
               </p>
               <p
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 

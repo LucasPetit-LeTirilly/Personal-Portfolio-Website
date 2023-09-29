@@ -21,10 +21,9 @@ export default function Formations() {
               className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
           max-[340px]:text-[0.8rem] relative top-[45%]"
             >
-              Associate degree in Physics
-              <br />
-              Universiy of Rennes 1 <br />
-              2017
+              Master&apos;s degree in Sound <br /> École Nationale Supérieure
+              Louis-Lumiere
+              <br /> 2021
             </p>
             <Image
               src={ArrowFormationMobile}
@@ -36,9 +35,10 @@ export default function Formations() {
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
               max-[340px]:text-[0.8rem] relative top-[20%]"
               >
-                Master&apos;s degree in Sound <br /> École Nationale Supérieure
-                Louis-Lumiere
-                <br /> 2021
+                Associate degree in Physics
+                <br />
+                Universiy of Rennes 1 <br />
+                2017
               </p>
               <p
                 className="font-koho font-medium text-center min-[470px]:text-[1.2rem] 
