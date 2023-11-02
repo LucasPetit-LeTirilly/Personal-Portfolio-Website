@@ -1,18 +1,30 @@
 import { NextResponse } from "next/server";
-import { match } from "@formatjs/intl-localematcher";
+import type { NextRequest } from "next/server";
+
+import { i18n } from "./i18n-config";
+
+import { match as matchLocale } from "@formatjs/intl-localematcher";
 var Negotiator = require("negotiator");
 
-let locales = ["en", "fr"];
+function getLocale(request: NextRequest): string | undefined {
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-function getLocale(request: any) {
-  let languages = new Negotiator({ request });
-  let defaultLocale = "fr";
-  return match(languages, locales, defaultLocale);
+  const locales: string[] = i18n.locales;
+
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    locales,
+  );
+
+  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+
+  return locale;
 }
 
-export function middleware(request: any) {
+export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
-  const pathnameIsMissingLocale = locales.every(
+
+  const pathnameIsMissingLocale = i18n.locales.every(
     (locale) =>
       !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`,
   );
@@ -20,11 +32,13 @@ export function middleware(request: any) {
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
     return NextResponse.redirect(
-      new URL(`/${locale}/${pathname}`, request.url),
+      new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        request.url,
+      ),
     );
   }
 }
-
 export const config = {
   matcher: ["/"],
 };
