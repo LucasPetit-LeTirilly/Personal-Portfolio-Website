@@ -8,3 +8,4 @@ Codebase for Lucas Petit - Le Tirilly's Web Portfolio
 -Embla Carousel
 -Material UI
 -The domain is managed by Cloudflare
+-The SMTP provider is SendGrid
