@@ -7,3 +7,4 @@ Codebase for Lucas Petit - Le Tirilly's Web Portfolio
 -Tailwind CSS
 -Embla Carousel
 -Material UI
+-The domain is managed by Cloudflare
