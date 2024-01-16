@@ -4,6 +4,7 @@ import Image from "next/image";
 import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
 import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
 import FrontendCompetencesMobile from "../../../public/frontend-competence-circle-mobile.svg";
+import BackendComptencesDesktop from "../../../public/backend-competence-circle-desktop.svg";
 import BackendCompetencesMobile from "../../../public/backend-competence-circle-mobile.svg";
 import OutilsCompetencesMobile from "../../../public/outils-competence-circle-mobile.svg";
 import OutilsCompetencesDesktop from "../../../public/outils-competence-circle-desktop.svg";
@@ -102,7 +103,7 @@ export default function Competences() {
                 </article>
                 <article>
                   <Image
-                    src={BackendCompetencesMobile}
+                    src={BackendComptencesDesktop}
                     alt="Backend skills"
                     className="w-[25vw] lg:w-[22vw] absolute top-5 right-12 z-10"
                   />
