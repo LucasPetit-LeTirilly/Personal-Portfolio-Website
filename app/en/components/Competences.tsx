@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import BlackEllipsisMobile from "../../../public/black-ellipse-mobile-competences.svg";
 import BlackEllipsisDesktop from "../../../public/black-ellipse-desktop-competences.svg";
-import Margin from "../../../public/margin-extra-long-edited4k.png";
 import Formations from "./Formations";
 import SkillsMobile from "../../../public/skills-mobile.svg";
 import SkillsDesktop from "../../../public/skills-desktop.svg";
@@ -52,24 +51,14 @@ export default function Competences() {
             <Formations />
           </React.Fragment>
         ) : (
-          <div
-            className="lg:grid lg:grid-rows-[1300px] min-[1300px]:grid-rows-[1550px]  lg:grid-cols-[1fr_80vw_1fr] 
-             overflow-y-hidden"
-          >
-            <Image
-              src={Margin}
-              alt="Decorative margin"
-              className="max-lg:hidden mt-[-50px]"
-            />
+          <div className="lg:grid  lg:grid-cols-[1fr_80vw_1fr] z-20">
+            <div className="max-lg:hidden margin"></div>
+
             <div className="mx-auto mt-[80px] lg:mt-[150px] w-[90%] lg:w-[800px] xl:w-[1000px]">
               <Image src={SkillsDesktop} alt="Skills" />
               <Formations />
             </div>
-            <Image
-              src={Margin}
-              alt="Decorative margin"
-              className="max-lg:hidden rotate-180 mt-[-50px]"
-            />
+            <div className="max-lg:hidden rotate-180 margin"></div>
           </div>
         )}
       </section>

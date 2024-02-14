@@ -10,3 +10,10 @@ html {
   scroll-behavior: smooth !important;
   scroll-padding-top: 7%;
 }
+
+@media (min-width: 1024px) {
+  .margin {
+    background-image: url("/margin-extra-long-edited4k.png");
+    background-size: cover;
+  }
+}
