@@ -36,15 +36,15 @@ export default function NestedModal(props: Props) {
         onClick={handleOpen}
         className="relative w-[100%] h-[150px] lg:h-[300px] bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
       >
-        <p
-          className="text-white font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
+        <span
+          className="text-white block font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
         -translate-y-[50%]"
         >
           {props.data.title}
-        </p>
-        <p className="text-white font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
+        </span>
+        <span className="text-white block font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
           Cliquez pour afficher les détails
-        </p>
+        </span>
         <Image
           src={props.data.images[0]}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

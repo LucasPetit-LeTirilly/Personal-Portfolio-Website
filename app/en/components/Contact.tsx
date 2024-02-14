@@ -104,6 +104,7 @@ export default function Contact() {
             <input
               {...register("surname")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+              id="surname"
             />
           </div>
           <div className="flex-[1_1_0]">
@@ -112,6 +113,7 @@ export default function Contact() {
             <input
               {...register("name")}
               className="w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+              id="name"
             />
           </div>
         </div>
@@ -120,6 +122,7 @@ export default function Contact() {
           <input
             {...register("email", { required: true })}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            id="email"
           />
         </div>
         <div>
@@ -127,6 +130,7 @@ export default function Contact() {
           <input
             {...register("subject")}
             className="block w-full mt-2 mb-3 h-[2rem] p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            id="subject"
           />
         </div>
         <div>
@@ -136,6 +140,7 @@ export default function Contact() {
             rows={5}
             cols={20}
             className="block w-full mt-2 p-1 rounded drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+            id="message"
           ></textarea>
         </div>
         <input
