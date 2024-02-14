@@ -2,11 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import LogoGithub from "../../../public/logo-github.svg";
 import LogoLinkedin from "../../../public/logo-linkedin.svg";
-import LogoFooter from "../../../public/logo-footer.svg";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-brown-footer z-10">
+    <footer className="relative brown-header z-10">
       <div className="flex flex-col items-center">
         <div className="flex flex-row gap-5 mt-6">
           <Link
