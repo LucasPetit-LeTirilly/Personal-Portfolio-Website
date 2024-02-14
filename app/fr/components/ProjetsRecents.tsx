@@ -15,7 +15,7 @@ export default function ProjetsRecents() {
       {(windowSize.width ?? 0) < 620 ? (
         <React.Fragment>
           <Image
-            className="relative top-[0] left-[49.7%] -translate-x-[50%] w-[204.3px]"
+            className="relative top-[0] left-[49.5%] -translate-x-[50%] w-[198px]"
             src={BlackEllipseMobile}
             alt="Demi-cercle noir"
           />

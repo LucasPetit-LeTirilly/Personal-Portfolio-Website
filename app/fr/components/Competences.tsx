@@ -46,16 +46,20 @@ export default function Competences() {
         {(windowSize.width ?? 0) < 620 ? (
           <React.Fragment>
             <div className="w-[80%] mx-auto pb-7">
-              <Image src={SkillsMobile} className="w-full" alt="Skills"></Image>
+              <Image
+                src={SkillsMobile}
+                className="w-full"
+                alt="Compétences"
+              ></Image>
             </div>
             <Formations />
           </React.Fragment>
         ) : (
-          <div className="lg:grid  lg:grid-cols-[1fr_80vw_1fr] z-20">
+          <div className="lg:grid  lg:grid-cols-[1fr_80vw_1fr]">
             <div className="max-lg:hidden margin"></div>
 
             <div className="mx-auto mt-[80px] lg:mt-[150px] w-[90%] lg:w-[800px] xl:w-[1000px]">
-              <Image src={SkillsDesktop} alt="Skills" />
+              <Image src={SkillsDesktop} alt="Compétences" />
               <Formations />
             </div>
             <div className="max-lg:hidden rotate-180 margin"></div>

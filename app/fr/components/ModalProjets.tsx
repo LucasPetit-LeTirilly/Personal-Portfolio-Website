@@ -34,7 +34,7 @@ export default function NestedModal(props: Props) {
     <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
       <TriggerButton
         onClick={handleOpen}
-        className="relative block w-[100%] h-[25vh] lg:h-[28vh] bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
+        className="relative w-[100%] h-[150px] lg:h-[300px] bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
       >
         <p
           className="text-white font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]

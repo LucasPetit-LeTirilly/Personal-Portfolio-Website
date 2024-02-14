@@ -51,7 +51,7 @@ export default function Competences() {
             <Formations />
           </React.Fragment>
         ) : (
-          <div className="lg:grid  lg:grid-cols-[1fr_80vw_1fr] z-20">
+          <div className="lg:grid  lg:grid-cols-[1fr_80vw_1fr]">
             <div className="max-lg:hidden margin"></div>
 
             <div className="mx-auto mt-[80px] lg:mt-[150px] w-[90%] lg:w-[800px] xl:w-[1000px]">

@@ -34,7 +34,7 @@ export default function CarouselModal(props: Props) {
         alt={`Screen capture number ${props.index + 1} of the app `}
         sizes="50vw"
         fill={true}
-        className="object-cover object-top"
+        className="object-cover object-left-top"
       />
       {/* <StyledModal
         open={open}
