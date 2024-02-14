@@ -54,10 +54,10 @@ export default function Formations() {
           <Image
             src={BlackCircleMobile}
             alt="Black circle"
-            className="max-[1024px]:w-[200px] lg:w-[300px] mt-5"
+            className="max-[1024px]:w-[200px] lg:w-[280px] mt-5"
           />
           <h2
-            className="font-heading font-normal absolute text-white top-[17%] lg:top-[130px] left-[50%] -translate-x-[50%]
+            className="font-heading font-normal absolute text-white top-[17%] lg:top-[123px] left-[50%] -translate-x-[50%]
             text-[2rem] lg:text-[3rem]"
           >
             Studies
