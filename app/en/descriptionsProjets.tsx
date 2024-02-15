@@ -1,16 +1,37 @@
 export const descriptionsProjets = [
   {
-    title: "React project of the OpenClassrooms training program",
-    images: ["/projet-react-capture1.png", "/projet-react-capture2.png"],
-    date: "July 2023",
-    lienGithub:
-      "https://github.com/LucasPetit-LeTirilly/Projet-React-OpenClassrooms",
+    title: "Developping the Glasswork Mastering website",
+    images: [
+      "/glasswork-mastering-capture1.png",
+      "/glasswork-mastering-capture3.png",
+    ],
+    imagesMobile: [
+      "/glasswork-mastering-capture1Mobile.png",
+      "/glasswork-mastering-capture3.png",
+    ],
+    date: "November 2023 - January 2024",
+    lienGithub: "",
+    lien: "https://www.glassworkmastering.com",
     description:
-      'This entirely responsive frontend app is a recreation of an appartment renting website. It is made of a landing page where the products are displayed as cards. Clicking on a card directs the user to the appartment\'s page where all of the informations are present. The app also contains an "About" section and an error page to redirect the user if an incorrect url is entered.',
+      "Site created for the music mastering studio Glasswork Mastering. Built and designed following the specifications of the sound engineer in charge of the studio. Multilanguage website both presenting the studio and an e-commerce interface where the customers can order. After which they can transmit in great detail their wishes and expectations for the mastering of their music through specials forms.",
     competences:
-      " Made from scratch following the interface design, this project allowed me to develop skills in React (component, routing, hooks, context etc) as well as SCSS/SASS. ",
+      "Developed with Next.js (React framework) both for frontend and backend (thanks to the Next.js API feature) and Typescript. With Stripe as the payment API, Tailwind CSS for the styling and designed on Figma.",
     problemes:
-      "The dynamic handling of the routes and the fetching and distribution of adequate data to each component.",
+      "The most demanding feature was the form system allowing the customers to transmit information. Because they are interdependents, some are about Projects, other about Titles and some for paid options. Finding the right balance between user experience and robustness required special attention.",
+  },
+  {
+    title: "Debugging and maintenance of the Hesra Studio website ",
+    images: ["/hesra-studio-capture1.png", "/hesra-studio-capture2.png"],
+    imagesMobile: [],
+    date: "January 2024",
+    lienGithub: "",
+    lien: "https://hesrastudio.com",
+    description:
+      "Debugging and maintenance intervention on the Hesra Studio wordpress site. I had to correct the UI through Elementor, reconfigure the plugin in charge of the e-commerce aspect of the site (WooCommerce), restore the mail sending feature, and update other plugins and the backend server. Identifying the source of the different problems was the challenging aspect of this work.",
+    competences:
+      "Development on Wordpress, experience on UI/Frontend plugins (Elementor, WooCommerce) and on backend maintenance.",
+    problemes:
+      "Track the source of the bugs. Configure and resolve conflict between plugins. Checkup of the site features.",
   },
   {
     title: "Node.js/Express.js project of the OpenClassrooms training program",
@@ -19,30 +40,16 @@ export const descriptionsProjets = [
       "/projet-backend-capture2.png",
       "/projet-backend-capture3.png",
     ],
+    imagesMobile: [],
     date: "August 2023",
     lienGithub:
       "https://github.com/LucasPetit-LeTirilly/Projet-Backend-Node.js-OpenClassrooms",
+    lien: "",
     description:
       "Development of the backend side of an book rating app. Built with Node.js and Express.js as the framework. The app allow the user to sign up, sign in and then post, rate, delete and update infos about the book they have read. The user can also rate books posted by other users. The backend handles all the CRUD functionalities and is secrued, it manages also the reading and writing of a MongoDatabase.",
     competences:
       "Node.js, Express.js and MongoDB. As well as how to create and use middlewares about authentication, images upload and compression, input validation. I also used, among others, cryptographic and header securing packages.",
     problemes:
       "Building a CRUB backend with a Restfull API, secured through tokens, who are initialy delivered then requested from the user at each request.",
-  },
-  {
-    title: "Optimization/SEO project of the OpenClassrooms training program",
-    images: [
-      "/projet-optimisation-capture1.png",
-      "/projet-optimisation-capture2.png",
-    ],
-    date: "June 2023",
-    lienGithub:
-      "https://github.com/LucasPetit-LeTirilly/Projet-Optimisation-OpenClassrooms",
-    description:
-      "Technical optimization and improvement of the SEO and accessibility of a presentation website for a fictionnal professional photographer. The aim was to audit the website and do the necessary in order to improve the performances (loading time etc) and the SEO potential.",
-    competences:
-      "This project made me aware of the importance of performances, and how to maximize them through image compression and serving depending on the user's width device, minifying of files and order management of script execution. I had also the opportunity to learn about SEO's importance, metadata usage and web accessibility.",
-    problemes:
-      "Find which features it is most important to improve in order to reach maximum optimization and how  to enrich the website with corresponding metadatas.",
   },
 ];

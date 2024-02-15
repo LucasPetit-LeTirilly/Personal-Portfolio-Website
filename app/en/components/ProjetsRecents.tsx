@@ -5,6 +5,7 @@ import Image from "next/image";
 import BlackEllipseMobile from "../../../public/black-ellipse-mobile-projets-recents.png";
 import BlackEllipseDesktop from "../../../public/black-ellipse-desktop-projets-recents.svg";
 import ModalProjets from "./ModalProjets";
+import ModalProjetsGlasswork from "./ModalProjetsGlasswork";
 import { descriptionsProjets } from "../descriptionsProjets";
 import { useWindowSize } from "../../lib/customHooks";
 
@@ -50,7 +51,7 @@ export default function ProjetsRecents() {
       )}
       <div className=" mt-[2rem] max-[620px]:mt-[1rem] max-[790px]:mt-[9rem] min-[790px]:mt-[-3rem] lg:mt-3">
         <div className="lg:flex lg:flex-wrap">
-          <ModalProjets data={descriptionsProjets[0]} />
+          <ModalProjetsGlasswork data={descriptionsProjets[0]} />
           <ModalProjets data={descriptionsProjets[1]} />
           <ModalProjets data={descriptionsProjets[2]} />
         </div>

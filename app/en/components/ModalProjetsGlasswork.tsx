@@ -6,11 +6,13 @@ import { Button } from "@mui/base/Button";
 import Cross from "../../../public/xmark-solid.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel from "./Carousel";
+import CarouselGlasswork from "./CarouselGlasswork";
+import { useWindowSize } from "../../lib/customHooks";
 
 interface Data {
   title: string;
   images: string[];
+  imagesMobile: string[];
   date: string;
   lienGithub: string;
   lien: string;
@@ -25,12 +27,20 @@ interface Props {
 
 export default function NestedModal(props: Props) {
   const [open, setOpen] = React.useState(false);
+  const { windowSize } = useWindowSize();
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
+
+  let imagesToPassAsProps;
+  if ((windowSize.width ?? 0) < 600) {
+    imagesToPassAsProps = props.data.imagesMobile;
+  } else {
+    imagesToPassAsProps = props.data.images;
+  }
 
   return (
     <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
@@ -45,14 +55,14 @@ export default function NestedModal(props: Props) {
           {props.data.title}
         </span>
         <span className="text-white hidden  md:block font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
-          Clic to dispay details
+          Click to dispay details
         </span>
         <Image
           src={props.data.images[0]}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill={true}
           alt={props.data.title}
-          className="hover:opacity-0 object-cover object-top"
+          className="hover:opacity-0 object-cover object-left-top"
         />
       </TriggerButton>
       <StyledModal
@@ -70,7 +80,7 @@ export default function NestedModal(props: Props) {
             <Image src={Cross} alt="Close window" width={30} height={40} />
           </Button>
           <div className="lg:flex">
-            <Carousel images={props.data.images} />
+            <CarouselGlasswork images={imagesToPassAsProps} />
             <div className="lg:ml-5 flex-[1_1_0]">
               <h3
                 id="modal-modal-title"

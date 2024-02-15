@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import LeftArrow from "../../../public/arrow-left.svg";
@@ -8,7 +8,7 @@ interface Props {
   images: string[];
 }
 
-export default function Carousel(props: Props) {
+export default function CarouselGlasswork(props: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -19,7 +19,7 @@ export default function Carousel(props: Props) {
   }, [emblaApi]);
 
   return (
-    <div className="embla overflow-hidden lg:w-[160%]">
+    <div className="embla overflow-hidden lg:w-[160%] flex-[1_1_0]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex">
           {props.images.map((image, index) => (

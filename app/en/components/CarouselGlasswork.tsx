@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import LeftArrow from "../../../public/arrow-left.svg";
@@ -8,7 +8,7 @@ interface Props {
   images: string[];
 }
 
-export default function Carousel(props: Props) {
+export default function CarouselGlasswork(props: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -19,7 +19,7 @@ export default function Carousel(props: Props) {
   }, [emblaApi]);
 
   return (
-    <div className="embla overflow-hidden lg:w-[160%]">
+    <div className="embla overflow-hidden lg:w-[160%] flex-[1_1_0]">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container flex">
           {props.images.map((image, index) => (
@@ -30,7 +30,7 @@ export default function Carousel(props: Props) {
               <div className="relative h-[35vh] lg:h-[45vh] flex-[1_1_0]">
                 <Image
                   src={image}
-                  alt={`Capture d'écran numéro ${index + 1} du site `}
+                  alt={`Screen capture number ${index + 1} of the app `}
                   sizes="50vw"
                   fill={true}
                   className="object-contain object-center"
@@ -46,13 +46,13 @@ export default function Carousel(props: Props) {
             className="embla__prev mr-2 w-[20px] h-[20px]"
             onClick={scrollPrev}
           >
-            <Image src={LeftArrow} alt="Image précédente" />
+            <Image src={LeftArrow} alt="Previous image" />
           </button>
           <button
             className="embla__next ml-2 w-[20px] h-[20px]"
             onClick={scrollNext}
           >
-            <Image src={RightArrow} alt="Image suivante" />
+            <Image src={RightArrow} alt="Next image" />
           </button>
         </div>
       )}

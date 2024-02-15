@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import CarouselModal from "./CarouselModal";
 import Image from "next/image";
 import LeftArrow from "../../../public/arrow-left.svg";
 import RightArrow from "../../../public/arrow-right.svg";
@@ -9,7 +8,7 @@ interface Props {
   images: string[];
 }
 
-export function Carousel(props: Props) {
+export default function Carousel(props: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -28,7 +27,15 @@ export function Carousel(props: Props) {
               key={image + index}
               className="embla__slide flex-[0_0_100%] min-w-0"
             >
-              <CarouselModal image={image} index={index} />
+              <div className="relative h-[35vh] lg:h-[45vh] flex-[1_1_0]">
+                <Image
+                  src={image}
+                  alt={`Screen capture number ${index + 1} of the app `}
+                  sizes="50vw"
+                  fill={true}
+                  className="object-contain object-center"
+                />
+              </div>
             </div>
           ))}
         </div>

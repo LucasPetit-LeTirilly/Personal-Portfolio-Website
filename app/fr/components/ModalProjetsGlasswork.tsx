@@ -6,11 +6,13 @@ import { Button } from "@mui/base/Button";
 import Cross from "../../../public/xmark-solid.svg";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel from "./Carousel";
+import CarouselGlasswork from "./CarouselGlasswork";
+import { useWindowSize } from "../../lib/customHooks";
 
 interface Data {
   title: string;
   images: string[];
+  imagesMobile: string[];
   date: string;
   lienGithub: string;
   lien: string;
@@ -25,12 +27,20 @@ interface Props {
 
 export default function NestedModal(props: Props) {
   const [open, setOpen] = React.useState(false);
+  const { windowSize } = useWindowSize();
   const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => {
     setOpen(false);
   };
+
+  let imagesToPassAsProps;
+  if ((windowSize.width ?? 0) < 600) {
+    imagesToPassAsProps = props.data.imagesMobile;
+  } else {
+    imagesToPassAsProps = props.data.images;
+  }
 
   return (
     <article className="mx-auto w-[83%] mb-[3rem] lg:w-[44vw] z-10 border-light-brown border-[1px]">
@@ -45,14 +55,14 @@ export default function NestedModal(props: Props) {
           {props.data.title}
         </span>
         <span className="text-white hidden  md:block font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
-          Clic to dispay details
+          Cliquez pour afficher les détails
         </span>
         <Image
           src={props.data.images[0]}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           fill={true}
           alt={props.data.title}
-          className="hover:opacity-0 object-cover object-top"
+          className="hover:opacity-0 object-cover object-left-top"
         />
       </TriggerButton>
       <StyledModal
@@ -67,10 +77,10 @@ export default function NestedModal(props: Props) {
             onClick={handleClose}
             className="relative w-full flex justify-end"
           >
-            <Image src={Cross} alt="Close window" width={30} height={40} />
+            <Image src={Cross} alt="Fermer la fenêtre" width={30} height={40} />
           </Button>
           <div className="lg:flex">
-            <Carousel images={props.data.images} />
+            <CarouselGlasswork images={imagesToPassAsProps} />
             <div className="lg:ml-5 flex-[1_1_0]">
               <h3
                 id="modal-modal-title"
@@ -88,7 +98,7 @@ export default function NestedModal(props: Props) {
                   target="_blank"
                   className="underline font-bold text-light-brown"
                 >
-                  Link to the GitHub repo
+                  Lien vers le dépôt Github
                 </Link>
               )}
               {props.data.lien && (
@@ -98,12 +108,12 @@ export default function NestedModal(props: Props) {
                   target="_blank"
                   className="underline font-bold text-light-brown"
                 >
-                  Link to the site
+                  Lien vers le site
                 </Link>
               )}
 
               <p className="mt-4 font-koho text-2xl font-normal">
-                Skills acquired:
+                Compétences acquises :
               </p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.competences}
@@ -113,7 +123,7 @@ export default function NestedModal(props: Props) {
           <div className="lg:flex gap-5">
             <div className="flex-[1_1_0]">
               <p className="font-koho text-2xl font-normal mt-2">
-                Description:
+                Description :
               </p>
               <p
                 id="modal-modal-description"
@@ -123,9 +133,7 @@ export default function NestedModal(props: Props) {
               </p>
             </div>
             <div className="flex-[1_1_0]">
-              <p className="font-koho text-2xl font-normal mt-2">
-                Challenges :
-              </p>
+              <p className="font-koho text-2xl font-normal mt-2">Enjeux :</p>
               <p className="text-base font-koho font-normal mt-2">
                 {props.data.problemes}
               </p>

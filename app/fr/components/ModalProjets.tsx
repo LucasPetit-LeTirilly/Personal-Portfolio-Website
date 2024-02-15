@@ -6,13 +6,14 @@ import { Button } from "@mui/base/Button";
 import Cross from "../../../public/xmark-solid.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { Carousel } from "./Carousel";
+import Carousel from "./Carousel";
 
 interface Data {
   title: string;
   images: string[];
   date: string;
   lienGithub: string;
+  lien: string;
   description: string;
   competences: string;
   problemes: string;
@@ -37,12 +38,12 @@ export default function NestedModal(props: Props) {
         className="relative w-[100%] h-[150px] lg:h-[300px] bg-light-brown normal-case drop-shadow-[5px_4px_4px_rgba(0,0,0,0.25)] rounded-none"
       >
         <span
-          className="text-white block font-koho font-normal text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
-        -translate-y-[50%]"
+          className="text-white block font-koho font-normal text-lg md:text-2xl absolute top-[50%] left-[50%] -translate-x-[50%]
+          -translate-y-[50%]"
         >
           {props.data.title}
         </span>
-        <span className="text-white block font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
+        <span className="text-white hidden  md:block font-koho font-normal text-base absolute bottom-[5%] right-[3%]">
           Cliquez pour afficher les détails
         </span>
         <Image
@@ -79,14 +80,26 @@ export default function NestedModal(props: Props) {
               <p className="font-koho text-xl font-normal text-center mt-1 mb-4">
                 <time>{props.data.date}</time>
               </p>
-              <Link
-                href={props.data.lienGithub}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="underline font-bold text-light-brown"
-              >
-                Lien vers le dépôt Github
-              </Link>
+              {props.data.lienGithub && (
+                <Link
+                  href={props.data.lienGithub}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="underline font-bold text-light-brown"
+                >
+                  Lien vers le dépôt Github
+                </Link>
+              )}
+              {props.data.lien && (
+                <Link
+                  href={props.data.lien}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="underline font-bold text-light-brown"
+                >
+                  Lien vers le site
+                </Link>
+              )}
               <p className="mt-4 font-koho text-2xl font-normal">
                 Compétences acquises :
               </p>
