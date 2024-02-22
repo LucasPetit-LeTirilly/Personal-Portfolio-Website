@@ -3,10 +3,12 @@ export const descriptionsProjets = [
     title: "Réalisation du site de Glasswork Mastering",
     images: [
       "/glasswork-mastering-capture1.png",
+      "/glasswork-mastering-capture2.png",
       "/glasswork-mastering-capture3.png",
     ],
     imagesMobile: [
       "/glasswork-mastering-capture1Mobile.png",
+      "/glasswork-mastering-capture2.png",
       "/glasswork-mastering-capture3.png",
     ],
     date: "Novembre 2023 - Janvier 2024",
